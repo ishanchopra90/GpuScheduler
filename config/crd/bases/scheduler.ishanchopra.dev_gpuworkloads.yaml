@@ -1,0 +1,464 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.20.1
+  name: gpuworkloads.scheduler.ishanchopra.dev
+spec:
+  group: scheduler.ishanchopra.dev
+  names:
+    kind: GPUWorkload
+    listKind: GPUWorkloadList
+    plural: gpuworkloads
+    singular: gpuworkload
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: Phase
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: GPUWorkload is the Schema for the gpuworkloads API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: spec defines the desired state of GPUWorkload
+            properties:
+              dataPreprocess:
+                description: DataPreprocessRuntimeSpec captures preprocessing workload-specific
+                  knobs.
+                properties:
+                  augmentationOverheadPct:
+                    default: 0
+                    description: AugmentationOverheadPct is optional augmentation/transform
+                      overhead in [0,1].
+                    maximum: 1
+                    minimum: 0
+                    type: number
+                  inputBytes:
+                    description: InputBytes is total input size in bytes for throughput-based
+                      preprocessing cost.
+                    format: int64
+                    minimum: 0
+                    type: integer
+                  tokenizationOverheadPct:
+                    default: 0
+                    description: TokenizationOverheadPct is extra tokenization/parser
+                      overhead as a fraction in [0,1].
+                    maximum: 1
+                    minimum: 0
+                    type: number
+                required:
+                - augmentationOverheadPct
+                - inputBytes
+                - tokenizationOverheadPct
+                type: object
+              distillation:
+                description: DistillationRuntimeSpec captures distillation workload-specific
+                  knobs.
+                properties:
+                  batchSize:
+                    description: BatchSize controls student-side distillation throughput.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  teacherForwardOverheadPct:
+                    default: 0
+                    description: TeacherForwardOverheadPct models extra teacher forward-pass
+                      cost in [0,1].
+                    maximum: 1
+                    minimum: 0
+                    type: number
+                  teacherProfile:
+                    description: TeacherProfile optionally overrides teacher hardware
+                      profile used for influence modeling.
+                    type: string
+                required:
+                - batchSize
+                - teacherForwardOverheadPct
+                type: object
+              embedding:
+                description: EmbeddingRuntimeSpec captures embedding workload-specific
+                  knobs.
+                properties:
+                  avgTokenLength:
+                    description: AvgTokenLength is the average input token length
+                      per item.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  batchSize:
+                    description: BatchSize controls embedding throughput with diminishing
+                      returns.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  vectorDimension:
+                    description: VectorDimension is the output embedding width (for
+                      example 768, 1024, 1536).
+                    format: int32
+                    minimum: 0
+                    type: integer
+                required:
+                - avgTokenLength
+                - batchSize
+                - vectorDimension
+                type: object
+              eval:
+                description: EvalRuntimeSpec captures evaluation-specific knobs.
+                properties:
+                  batchSize:
+                    description: BatchSize controls eval throughput similarly to inference,
+                      with diminishing returns.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  metricOverheadPct:
+                    default: 0
+                    description: MetricOverheadPct is extra metric-computation cost
+                      as a fraction in [0,1].
+                    maximum: 1
+                    minimum: 0
+                    type: number
+                  validationOverheadPct:
+                    default: 0
+                    description: ValidationOverheadPct is extra validation/checkpoint
+                      cost as a fraction in [0,1].
+                    maximum: 1
+                    minimum: 0
+                    type: number
+                required:
+                - batchSize
+                - metricOverheadPct
+                - validationOverheadPct
+                type: object
+              fineTune:
+                description: FineTuneRuntimeSpec captures fine-tuning-specific knobs.
+                properties:
+                  checkpointLoadOverheadPct:
+                    default: 0
+                    description: CheckpointLoadOverheadPct models additional checkpoint
+                      restore cost in [0,1].
+                    maximum: 1
+                    minimum: 0
+                    type: number
+                  globalBatchSize:
+                    description: GlobalBatchSize is the effective per-update batch
+                      across all devices/steps.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  gradAccumSteps:
+                    description: GradAccumSteps is the number of micro-batches accumulated
+                      before one update.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  microBatchSize:
+                    description: MicroBatchSize is the per-device batch used in one
+                      forward/backward pass.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  warmStartOverheadPct:
+                    default: 0
+                    description: WarmStartOverheadPct models checkpoint/model-load
+                      overhead as a fraction in [0,1].
+                    maximum: 1
+                    minimum: 0
+                    type: number
+                required:
+                - checkpointLoadOverheadPct
+                - globalBatchSize
+                - gradAccumSteps
+                - microBatchSize
+                - warmStartOverheadPct
+                type: object
+              gpuCount:
+                description: GPUCount is the number of devices requested.
+                format: int32
+                minimum: 1
+                type: integer
+              gpuMemoryMiB:
+                description: GPUMemoryMiB is the per-device memory requirement in
+                  MiB.
+                format: int32
+                minimum: 0
+                type: integer
+              inference:
+                description: InferenceRuntimeSpec captures inference-specific knobs.
+                properties:
+                  batchSize:
+                    description: BatchSize controls inference throughput with diminishing
+                      returns.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                required:
+                - batchSize
+                type: object
+              jitter:
+                description: Jitter optionally perturbs runtime estimation.
+                properties:
+                  enabled:
+                    type: boolean
+                  pct:
+                    default: 0.1
+                    description: 'Pct is a relative fraction. Example: 0.10 means
+                      +/-10%.'
+                    maximum: 1
+                    minimum: 0
+                    type: number
+                  seed:
+                    description: Seed enables reproducible jitter when set.
+                    format: int64
+                    type: integer
+                required:
+                - enabled
+                - pct
+                type: object
+              kind:
+                description: Kind selects the runtime model for this workload.
+                enum:
+                - training
+                - inference
+                - eval
+                - fine_tune
+                - rlhf
+                - embedding
+                - data_preprocess
+                - distillation
+                type: string
+              maxRuntimeSeconds:
+                description: MaxRuntimeSeconds is an optional upper bound used for
+                  admission control.
+                format: int64
+                minimum: 1
+                type: integer
+              priority:
+                description: Priority orders queued workloads; higher values run first.
+                format: int32
+                type: integer
+              profile:
+                description: Profile is the requested hardware profile name (for example
+                  "h100_sxm").
+                minLength: 1
+                type: string
+              rlhf:
+                description: RLHFRuntimeSpec captures RLHF-specific knobs.
+                properties:
+                  policyUpdateSteps:
+                    description: PolicyUpdateSteps controls how many update steps
+                      run per RLHF cycle.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  rewardBatchSize:
+                    description: RewardBatchSize controls batching for reward-model
+                      scoring.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  rolloutBatchSize:
+                    description: RolloutBatchSize controls how many rollout samples
+                      are generated per step.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  updateBatchSize:
+                    description: UpdateBatchSize controls policy-update batch efficiency.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                required:
+                - policyUpdateSteps
+                - rewardBatchSize
+                - rolloutBatchSize
+                - updateBatchSize
+                type: object
+              tenant:
+                description: Tenant is the workload owner / fairness identity.
+                minLength: 1
+                type: string
+              tokens:
+                description: Tokens is the total token volume used for runtime estimation.
+                format: int64
+                minimum: 1
+                type: integer
+              training:
+                description: |-
+                  Kind-specific runtime configuration. These are interpreted based on Kind.
+                  They are optional here; coherence and defaults are handled by validation/defaulting logic.
+                properties:
+                  globalBatchSize:
+                    description: GlobalBatchSize is the effective per-update batch
+                      across all devices/steps.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  gradAccumSteps:
+                    description: GradAccumSteps is the number of micro-batches accumulated
+                      before one update.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  microBatchSize:
+                    description: MicroBatchSize is the per-device batch used in one
+                      forward/backward pass.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  sequenceLength:
+                    description: SequenceLength is tokens per sample/sequence.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                required:
+                - globalBatchSize
+                - gradAccumSteps
+                - microBatchSize
+                - sequenceLength
+                type: object
+            required:
+            - gpuCount
+            - gpuMemoryMiB
+            - kind
+            - priority
+            - profile
+            - tenant
+            - tokens
+            type: object
+            x-kubernetes-validations:
+            - message: training config must be set when kind is training
+              rule: self.kind != 'training' || has(self.training)
+            - message: inference config must be set when kind is inference
+              rule: self.kind != 'inference' || has(self.inference)
+            - message: eval config must be set when kind is eval
+              rule: self.kind != 'eval' || has(self.eval)
+            - message: fineTune config must be set when kind is fine_tune
+              rule: self.kind != 'fine_tune' || has(self.fineTune)
+            - message: rlhf config must be set when kind is rlhf
+              rule: self.kind != 'rlhf' || has(self.rlhf)
+            - message: embedding config must be set when kind is embedding
+              rule: self.kind != 'embedding' || has(self.embedding)
+            - message: dataPreprocess config must be set when kind is data_preprocess
+              rule: self.kind != 'data_preprocess' || has(self.dataPreprocess)
+            - message: distillation config must be set when kind is distillation
+              rule: self.kind != 'distillation' || has(self.distillation)
+          status:
+            description: status defines the observed state of GPUWorkload
+            properties:
+              conditions:
+                description: |-
+                  conditions represent the current state of the GPUWorkload resource.
+                  Each condition has a unique type and reflects the status of a specific aspect of the resource.
+
+                  Standard condition types include:
+                  - "Available": the resource is fully functional
+                  - "Progressing": the resource is being created or updated
+                  - "Degraded": the resource failed to reach or maintain its desired state
+
+                  The status of each condition is one of True, False, or Unknown.
+                items:
+                  description: Condition contains details for one aspect of the current
+                    state of this API Resource.
+                  properties:
+                    lastTransitionTime:
+                      description: |-
+                        lastTransitionTime is the last time the condition transitioned from one status to another.
+                        This should be when the underlying condition changed.  If that is not known, then using the time when the API field changed is acceptable.
+                      format: date-time
+                      type: string
+                    message:
+                      description: |-
+                        message is a human readable message indicating details about the transition.
+                        This may be an empty string.
+                      maxLength: 32768
+                      type: string
+                    observedGeneration:
+                      description: |-
+                        observedGeneration represents the .metadata.generation that the condition was set based upon.
+                        For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date
+                        with respect to the current state of the instance.
+                      format: int64
+                      minimum: 0
+                      type: integer
+                    reason:
+                      description: |-
+                        reason contains a programmatic identifier indicating the reason for the condition's last transition.
+                        Producers of specific condition types may define expected values and meanings for this field,
+                        and whether the values are considered a guaranteed API.
+                        The value should be a CamelCase string.
+                        This field may not be empty.
+                      maxLength: 1024
+                      minLength: 1
+                      pattern: ^[A-Za-z]([A-Za-z0-9_,:]*[A-Za-z0-9_])?$
+                      type: string
+                    status:
+                      description: status of the condition, one of True, False, Unknown.
+                      enum:
+                      - "True"
+                      - "False"
+                      - Unknown
+                      type: string
+                    type:
+                      description: type of condition in CamelCase or in foo.example.com/CamelCase.
+                      maxLength: 316
+                      pattern: ^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - message
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
+              phase:
+                description: Phase is the current high-level lifecycle state.
+                enum:
+                - Queued
+                - Scheduled
+                - Running
+                - Succeeded
+                - Failed
+                - Preempted
+                type: string
+              queuedAt:
+                description: QueuedAt records when the workload first entered the
+                  queue.
+                format: date-time
+                type: string
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

@@ -1,0 +1,161 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
+      "id": 200,
+      "title": "Operator (manager)",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Compare to cap: 512Mi (config/manager/manager.yaml)",
+      "fieldConfig": { "defaults": { "unit": "bytes", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 1 },
+      "id": 21,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "container_memory_working_set_bytes{namespace=~\"$namespace\", container=\"manager\"}", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "Memory (working set)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "rate(container_cpu_usage_seconds_total); compare to container limit",
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 1 },
+      "id": 22,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "rate(container_cpu_usage_seconds_total{namespace=~\"$namespace\", container=\"manager\"}[5m])", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "CPU usage (cores)",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 7 },
+      "id": 201,
+      "title": "Submitter",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Compare to cap: 128Mi per pod (deploy/submitter/deployment.yaml)",
+      "fieldConfig": { "defaults": { "unit": "bytes", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 8 },
+      "id": 23,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "container_memory_working_set_bytes{namespace=~\"$namespace\", container=\"submitter\"}", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "Memory (working set)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 8 },
+      "id": 24,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "rate(container_cpu_usage_seconds_total{namespace=~\"$namespace\", container=\"submitter\"}[5m])", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "CPU usage (cores)",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 14 },
+      "id": 202,
+      "title": "Simulator",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Compare to cap: 128Mi (deploy/simulator/deployment.yaml)",
+      "fieldConfig": { "defaults": { "unit": "bytes", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 15 },
+      "id": 25,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "container_memory_working_set_bytes{namespace=~\"$namespace\", container=\"simulator\"}", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "Memory (working set)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 15 },
+      "id": 26,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "rate(container_cpu_usage_seconds_total{namespace=~\"$namespace\", container=\"simulator\"}[5m])", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "CPU usage (cores)",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 21 },
+      "id": 203,
+      "title": "Worker deployment",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Compare to cap: 128Mi per pod (deploy/worker-deployment/deployment.yaml)",
+      "fieldConfig": { "defaults": { "unit": "bytes", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 22 },
+      "id": 27,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "container_memory_working_set_bytes{namespace=~\"$namespace\", container=\"worker\"}", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "Memory (working set)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 22 },
+      "id": 28,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "rate(container_cpu_usage_seconds_total{namespace=~\"$namespace\", container=\"worker\"}[5m])", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "CPU usage (cores)",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["gpu-scheduler", "resources"],
+  "templating": {
+    "list": [
+      {
+        "current": { "selected": false, "text": "Prometheus", "value": "Prometheus" },
+        "hide": 0,
+        "includeAll": false,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource",
+        "datasource": { "type": "prometheus", "uid": "prometheus" }
+      },
+      {
+        "current": { "selected": true, "text": "system", "value": "system" },
+        "datasource": { "type": "prometheus", "uid": "${datasource}" },
+        "hide": 0,
+        "includeAll": true,
+        "name": "namespace",
+        "options": [],
+        "query": "label_values(container_memory_working_set_bytes{container=~\"manager|submitter|simulator|worker\"}, namespace)",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
+  },
+  "time": { "from": "now-1h", "to": "now" },
+  "timepicker": {},
+  "timezone": "",
+  "title": "GPU Scheduler – CPU & memory utilization",
+  "uid": "gpu-scheduler-resources",
+  "version": 1
+}

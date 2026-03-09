@@ -1,0 +1,14 @@
+# Dead-letter topic for invalid workload submission messages. Submitter produces here on validation failure.
+# Set metadata.labels.strimzi.io/cluster to your Kafka cluster name.
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaTopic
+metadata:
+  name: gpu-workloads-submit-dlq
+  labels:
+    strimzi.io/cluster: kafka
+spec:
+  topicName: gpu.workloads.submit.dlq
+  partitions: 1
+  replicas: 1
+  config:
+    retention.ms: 604800000

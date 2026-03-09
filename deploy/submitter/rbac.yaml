@@ -1,0 +1,28 @@
+# RBAC for submitter: create/get/list GPUWorkload CRs (idempotent create).
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: submitter
+  namespace: system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: submitter
+rules:
+  - apiGroups: ["scheduler.ishanchopra.dev"]
+    resources: ["gpuworkloads"]
+    verbs: ["create", "get", "list", "watch", "update", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: submitter
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: submitter
+subjects:
+  - kind: ServiceAccount
+    name: submitter
+    namespace: system

@@ -1,0 +1,11 @@
+# Worker Deployment (scale-focused): Deployment + KEDA ScaledObject (Prometheus backlog).
+# Prerequisites: KEDA installed, Prometheus scraping operator metrics (gpu_scheduler_scheduled_workloads),
+# simulator reachable, worker-deployment image built/pushed. Override SIMULATOR_URL, NAMESPACE,
+# serverAddress and image via kustomize.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: system
+resources:
+  - deployment.yaml
+  - keda-scaledobject.yaml
+  - rbac.yaml

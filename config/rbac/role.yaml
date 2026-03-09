@@ -1,0 +1,57 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+- apiGroups:
+  - batch
+  resources:
+  - jobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - scheduler.ishanchopra.dev
+  resources:
+  - gpunodepools
+  - gpuworkloads
+  - tenantquotas
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - scheduler.ishanchopra.dev
+  resources:
+  - gpunodepools/finalizers
+  - gpuworkloads/finalizers
+  - tenantquotas/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - scheduler.ishanchopra.dev
+  resources:
+  - gpunodepools/status
+  - gpuworkloads/status
+  - tenantquotas/status
+  verbs:
+  - get
+  - patch
+  - update

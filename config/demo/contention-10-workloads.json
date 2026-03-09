@@ -1,0 +1,162 @@
+[
+  {
+    "request_id": "contention-wl-1",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "contention-wl-2",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "contention-wl-3",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "contention-wl-4",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "contention-wl-5",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "contention-wl-6",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "contention-wl-7",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "contention-wl-8",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "contention-wl-9",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "contention-wl-10",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  }
+]

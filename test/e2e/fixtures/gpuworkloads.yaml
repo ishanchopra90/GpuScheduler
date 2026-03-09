@@ -1,0 +1,56 @@
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: e2e-workload-1
+  namespace: default
+spec:
+  tenant: e2e-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: e2e-workload-2
+  namespace: default
+spec:
+  tenant: e2e-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: e2e-workload-3
+  namespace: default
+spec:
+  tenant: e2e-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024

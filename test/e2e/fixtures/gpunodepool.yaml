@@ -1,0 +1,32 @@
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUNodePool
+metadata:
+  name: e2e-pool
+  namespace: default
+spec:
+  nodeCount: 2
+  devicesPerNode: 4
+  memoryMiBPerDevice: 81920
+  profile: h100_sxm
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUNodePool
+metadata:
+  name: e2e-pool-a100
+  namespace: default
+spec:
+  nodeCount: 1
+  devicesPerNode: 4
+  memoryMiBPerDevice: 81920
+  profile: a100_80gb
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUNodePool
+metadata:
+  name: e2e-pool-tpu
+  namespace: default
+spec:
+  nodeCount: 1
+  devicesPerNode: 4
+  memoryMiBPerDevice: 65536
+  profile: tpu_v5e_chip

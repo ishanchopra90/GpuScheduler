@@ -1,0 +1,48 @@
+[
+  {
+    "name": "h100_sxm",
+    "memoryMiB": 81920,
+    "memBandwidthGBps": 3350,
+    "peakTFLOPSBF16": 989,
+    "interconnectGBps": 900,
+    "notes": "H100 SXM profile for simulator calibration; compute/interconnect are approximate published peak values.",
+    "source_url": "https://www.nvidia.com/en-us/data-center/h100/",
+    "source_urls": [
+      "https://resources.nvidia.com/en-us-tensor-core/nvidia-tensor-core-gpu-datasheet",
+      "https://www.nvidia.com/en-us/data-center/h100/"
+    ]
+  },
+  {
+    "name": "a100_80gb",
+    "memoryMiB": 81920,
+    "memBandwidthGBps": 2039,
+    "peakTFLOPSBF16": 312,
+    "notes": "A100 80GB profile for simulator calibration; BF16 value uses Tensor Core peak.",
+    "source_url": "https://www.nvidia.com/en-us/data-center/a100/",
+    "source_urls": [
+      "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf",
+      "https://www.nvidia.com/en-us/data-center/a100/"
+    ]
+  },
+  {
+    "name": "tpu_v5e_chip",
+    "memoryMiB": 16384,
+    "memBandwidthGBps": 819,
+    "notes": "Cloud TPU v5e single-chip profile for simulator calibration.",
+    "source_url": "https://cloud.google.com/tpu/docs/v5e",
+    "source_urls": [
+      "https://cloud.google.com/tpu/docs/v5e"
+    ]
+  },
+  {
+    "name": "trn1_instance",
+    "memoryMiB": 524288,
+    "memBandwidthGBps": 8200,
+    "notes": "Trn1.32xlarge aggregate profile for simulator calibration across 16 Trainium devices.",
+    "source_url": "https://aws.amazon.com/ec2/instance-types/trn1/",
+    "source_urls": [
+      "https://aws.amazon.com/ec2/instance-types/trn1/",
+      "https://aws.amazon.com/machine-learning/trainium/"
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+# kube-prometheus-stack values for GPU Scheduler baseline demo.
+# Use: helm upgrade --install kube-prometheus-stack prometheus-community/kube-prometheus-stack -n monitoring --create-namespace -f deploy/monitoring/values.yaml
+#
+# - Prometheus scrapes operator via ServiceMonitor (deploy after enabling config/default ../prometheus).
+# - These additionalScrapeConfigs scrape submitter, simulator, and worker pods in namespace "system"
+#   so pipeline metrics (gpu_scheduler_*, sim_*) are available for the Grafana pipeline dashboard.
+# - KEDA worker ScaledObject expects Prometheus at http://prometheus-operated.monitoring.svc:9090;
+#   this chart creates prometheus-operated (or release name prefix) in the monitoring namespace.
+
+grafana:
+  adminPassword: admin
+  # Persistence not needed for a quick demo
+  persistence:
+    enabled: false
+
+prometheus:
+  prometheusSpec:
+    additionalScrapeConfigs:
+      # Submitter: pods with metrics on :8080
+      - job_name: gpu-scheduler-submitter
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces:
+              names: [system]
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app_kubernetes_io_name]
+            action: keep
+            regex: gpu-scheduler-submitter
+          - source_labels: [__meta_kubernetes_pod_ip]
+            target_label: __address__
+            replacement: ${1}:8080
+          - source_labels: [__meta_kubernetes_pod_name]
+            target_label: pod
+          - source_labels: [__meta_kubernetes_namespace]
+            target_label: namespace
+          - action: labelmap
+            regex: __meta_kubernetes_pod_label_(.+)
+      # Simulator: single service :8080
+      - job_name: gpu-scheduler-simulator
+        static_configs:
+          - targets:
+              - simulator.system.svc.cluster.local:8080
+        relabel_configs:
+          - target_label: job
+            replacement: gpu-scheduler-simulator
+          - target_label: namespace
+            replacement: system
+      # Worker: pods with metrics on :8080
+      - job_name: gpu-scheduler-worker
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces:
+              names: [system]
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app_kubernetes_io_name]
+            action: keep
+            regex: gpu-scheduler-worker-deployment
+          - source_labels: [__meta_kubernetes_pod_ip]
+            target_label: __address__
+            replacement: ${1}:8080
+          - source_labels: [__meta_kubernetes_pod_name]
+            target_label: pod
+          - source_labels: [__meta_kubernetes_namespace]
+            target_label: namespace
+          - action: labelmap
+            regex: __meta_kubernetes_pod_label_(.+)

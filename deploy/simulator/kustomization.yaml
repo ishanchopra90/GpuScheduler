@@ -1,0 +1,8 @@
+# Simulator service for local Kind. Apply with: kubectl apply -k deploy/simulator
+# Build and load image first (e.g. make simulator-up). Service name "simulator" so
+# SIMULATOR_URL=http://simulator:8080 works from operator/worker in namespace system.
+namespace: system
+resources:
+  - namespace.yaml
+  - deployment.yaml
+  - service.yaml

@@ -1,0 +1,21 @@
+# TenantQuota CRs for demo 1.3 (tenant quotas / hard caps).
+# tenant-a: max 2 GPUs; tenant-b: max 2 GPUs. With 8-device pool, submitting
+# 4× tenant-a + 2× tenant-b (1 GPU each) leaves 2 tenant-a workloads Queued (over quota).
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: TenantQuota
+metadata:
+  name: quota-tenant-a
+spec:
+  tenant: tenant-a
+  maxGPUs: 2
+  weight: 1
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: TenantQuota
+metadata:
+  name: quota-tenant-b
+spec:
+  tenant: tenant-b
+  maxGPUs: 2
+  weight: 1

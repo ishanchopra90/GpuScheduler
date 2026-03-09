@@ -1,0 +1,54 @@
+# Simulator service: HTTP API for fleet registration, allocate, start, run status.
+# Operator and worker-deployment call this service. Service name "simulator" so
+# SIMULATOR_URL=http://simulator:8080 works from pods in the same namespace.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simulator
+  namespace: system
+  labels:
+    app.kubernetes.io/name: gpu-scheduler-simulator
+    app.kubernetes.io/component: simulator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: gpu-scheduler-simulator
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: gpu-scheduler-simulator
+        app.kubernetes.io/component: simulator
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: simulator
+          image: gpu-scheduler-simulator:latest
+          imagePullPolicy: IfNotPresent
+          args:
+            - --addr=:8080
+          ports:
+            - containerPort: 8080
+              name: http
+          resources:
+            requests:
+              cpu: 10m
+              memory: 32Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 2
+            periodSeconds: 5

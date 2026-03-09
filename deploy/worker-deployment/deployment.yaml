@@ -1,0 +1,48 @@
+# Worker Deployment (scale-focused): long-lived pods that poll for Phase=Scheduled
+# GPUWorkloads, claim one, run simulator, update status. Scale with KEDA ScaledObject
+# (Prometheus gpu_scheduler_scheduled_workloads). Requires KEDA and Prometheus.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-deployment
+  namespace: system
+  labels:
+    app.kubernetes.io/name: gpu-scheduler-worker-deployment
+    app.kubernetes.io/component: worker-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: gpu-scheduler-worker-deployment
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: gpu-scheduler-worker-deployment
+        app.kubernetes.io/component: worker-deployment
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: worker
+          image: gpu-scheduler-worker-deployment:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: metrics
+              containerPort: 8080
+              protocol: TCP
+          env:
+            - name: SIMULATOR_URL
+              value: "http://simulator:8080"
+            - name: NAMESPACE
+              value: "default"
+            # WORKER_ID defaults to HOSTNAME (pod name) if unset
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 500m
+              memory: 128Mi
+      serviceAccountName: worker-deployment

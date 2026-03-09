@@ -1,0 +1,17 @@
+# KEDA Helm values: resource caps per docs/demo-results-scale.md (8G node).
+# Used by: make keda-up (helm upgrade --install keda ... -f deploy/keda/values.yaml).
+resources:
+  operator:
+    limits:
+      cpu: "1"
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  metricServer:
+    limits:
+      cpu: "1"
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi

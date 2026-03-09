@@ -1,0 +1,8 @@
+# Strimzi Kafka for local Kind. Apply with: kubectl apply -k deploy/kafka
+# Prerequisite: Strimzi Cluster Operator installed (e.g. make kafka-up).
+namespace: kafka
+resources:
+  - namespace.yaml
+  - cluster.yaml
+  - topic.yaml
+  - topic-dlq.yaml

@@ -1,0 +1,16 @@
+# Kafka topic for GPU workload submission. Apply after deploying Kafka (e.g. Strimzi).
+# Set metadata.labels.strimzi.io/cluster to your Kafka cluster name.
+# See: https://strimzi.io/docs/operators/latest/configuring.html#type-KafkaTopic-reference
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaTopic
+metadata:
+  name: gpu-workloads-submit
+  labels:
+    strimzi.io/cluster: kafka
+spec:
+  topicName: gpu.workloads.submit
+  partitions: 12
+  replicas: 1
+  config:
+    retention.ms: 86400000
+    segment.bytes: 1073741824

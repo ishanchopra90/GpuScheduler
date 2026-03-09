@@ -1,0 +1,193 @@
+# 10 GPUWorkloads (1 GPU each) for contention demo: pool has 8 devices → 8 Scheduled, 2 Queued.
+# Use with: kubectl apply -f config/demo/contention-10-workloads.yaml
+# Prerequisites: make stack-up; make apply-sample-pool (see docs/demo-results.md §1.1)
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: contention-wl-1
+  namespace: default
+spec:
+  tenant: demo-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: contention-wl-2
+  namespace: default
+spec:
+  tenant: demo-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: contention-wl-3
+  namespace: default
+spec:
+  tenant: demo-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: contention-wl-4
+  namespace: default
+spec:
+  tenant: demo-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: contention-wl-5
+  namespace: default
+spec:
+  tenant: demo-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: contention-wl-6
+  namespace: default
+spec:
+  tenant: demo-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: contention-wl-7
+  namespace: default
+spec:
+  tenant: demo-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: contention-wl-8
+  namespace: default
+spec:
+  tenant: demo-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: contention-wl-9
+  namespace: default
+spec:
+  tenant: demo-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024
+---
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: contention-wl-10
+  namespace: default
+spec:
+  tenant: demo-tenant
+  priority: 1
+  gpuCount: 1
+  gpuMemoryMiB: 81920
+  tokens: 1000
+  profile: h100_sxm
+  kind: training
+  training:
+    globalBatchSize: 32
+    microBatchSize: 8
+    gradAccumSteps: 1
+    sequenceLength: 1024

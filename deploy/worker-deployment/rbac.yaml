@@ -1,0 +1,28 @@
+# RBAC for worker-deployment: list/get/patch GPUWorkload CRs (claim and update phase).
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: worker-deployment
+  namespace: system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: worker-deployment
+rules:
+  - apiGroups: ["scheduler.ishanchopra.dev"]
+    resources: ["gpuworkloads", "gpuworkloads/status"]
+    verbs: ["get", "list", "watch", "update", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: worker-deployment
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: worker-deployment
+subjects:
+  - kind: ServiceAccount
+    name: worker-deployment
+    namespace: system

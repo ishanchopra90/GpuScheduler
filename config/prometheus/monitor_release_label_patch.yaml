@@ -1,0 +1,9 @@
+# Adds release label so Prometheus (e.g. kube-prometheus-stack) discovers this ServiceMonitor.
+# Prometheus is often configured with serviceMonitorSelector: { matchLabels: { release: kube-prometheus-stack } }.
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: controller-manager-metrics-monitor
+  labels:
+    release: kube-prometheus-stack
+spec: {}

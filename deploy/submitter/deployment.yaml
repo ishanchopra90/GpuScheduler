@@ -1,0 +1,45 @@
+# Submitter Deployment: Kafka consumer that creates GPUWorkload CRs.
+# Replica count is controlled by KEDA ScaledObject (Kafka consumer group lag from Strimzi cluster).
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: submitter
+  namespace: system
+  labels:
+    app.kubernetes.io/name: gpu-scheduler-submitter
+    app.kubernetes.io/component: submitter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: gpu-scheduler-submitter
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: gpu-scheduler-submitter
+        app.kubernetes.io/component: submitter
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: submitter
+          image: gpu-scheduler-submitter:latest
+          imagePullPolicy: IfNotPresent
+          args:
+            - --brokers=kafka-kafka-bootstrap.kafka.svc.cluster.local:9092
+            - --group-id=gpu-scheduler-submitter
+            - --namespace=default
+          ports:
+            - name: metrics
+              containerPort: 8080
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 500m
+              memory: 128Mi
+      serviceAccountName: submitter
