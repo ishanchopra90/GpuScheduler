@@ -131,7 +131,7 @@ With a Kind cluster running, deploy Strimzi and a single-node Kafka cluster (inc
 make kafka-up
 ```
 
-This installs the Strimzi Cluster Operator and a KRaft Kafka cluster in the `kafka` namespace. The cluster includes **Kafka Exporter**, which exposes consumer group lag as Prometheus metrics (e.g. `kafka_consumer_group_lag`). Configure Prometheus to scrape the Kafka Exporter service (e.g. `kafka-kafka-exporter.kafka.svc.cluster.local:9404`) so KEDA can scale the submitter from lag. In-cluster bootstrap address for submitter/KEDA/producer:
+This installs the Strimzi Cluster Operator and a KRaft Kafka cluster in the `kafka` namespace. The cluster includes **Kafka Exporter** (`groupRegex`/`topicRegex` `".*"`), which exposes consumer group lag as Prometheus metrics (`kafka_consumergroup_lag`). **`make stack-up`** runs both `kafka-up` and `monitoring-up`, so the Kafka cluster (with exporter) and Prometheus scrape for `kafka-kafka-exporter.kafka.svc.cluster.local:9404` are applied automatically; no manual helm/kubectl needed. In-cluster bootstrap address for submitter/KEDA/producer:
 
 - **Bootstrap servers**: `kafka-kafka-bootstrap.kafka.svc.cluster.local:9092`
 

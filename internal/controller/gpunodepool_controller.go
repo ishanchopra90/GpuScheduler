@@ -51,7 +51,7 @@ func (r *GPUNodePoolReconciler) Reconcile(ctx context.Context, req ctrl.Request)
 	pool := &schedulerv1alpha1.GPUNodePool{}
 	if err := r.Get(ctx, req.NamespacedName, pool); err != nil {
 		if apierrors.IsNotFound(err) {
-			r.FleetRegistrar.DeleteFleet(req.NamespacedName.String())
+			r.FleetRegistrar.DeleteFleet(req.String())
 			return ctrl.Result{}, nil
 		}
 		log.Error(err, "Failed to fetch GPUNodePool")
@@ -64,7 +64,7 @@ func (r *GPUNodePoolReconciler) Reconcile(ctx context.Context, req ctrl.Request)
 		return ctrl.Result{}, err
 	}
 
-	poolKey := req.NamespacedName.String()
+	poolKey := req.String()
 	spec := sim.GPUNodePoolSpec{
 		NodeCount:          int(pool.Spec.NodeCount),
 		DevicesPerNode:     int(pool.Spec.DevicesPerNode),

@@ -3,6 +3,7 @@ package controller
 import (
 	"context"
 	"fmt"
+	"maps"
 	"strings"
 	"sync"
 	"time"
@@ -24,7 +25,7 @@ import (
 )
 
 // schedulerState holds the in-memory scheduling queue and related state, fed by
-// watch/cache events (25A.2). Updated by informer event handlers.
+// watch/cache events. Updated by informer event handlers.
 type schedulerState struct {
 	mu sync.RWMutex
 
@@ -196,9 +197,7 @@ func (st *schedulerState) snapshotForNamespace(ns string) (
 	}
 	// Deep-copy fleet.ByProfile so caller cannot mutate state.
 	byProfile := make(map[string]scheduler.ProfileFreeCapacity, len(fleet.ByProfile))
-	for k, v := range fleet.ByProfile {
-		byProfile[k] = v
-	}
+	maps.Copy(byProfile, fleet.ByProfile)
 	fleet.ByProfile = byProfile
 	for _, q := range st.queued[ns] {
 		queued = append(queued, q)
@@ -210,31 +209,33 @@ func (st *schedulerState) snapshotForNamespace(ns string) (
 		running = append(running, r)
 	}
 	quotas = make(map[string]scheduler.TenantQuota)
-	for t, q := range st.quotas[ns] {
-		quotas[t] = q
-	}
+	maps.Copy(quotas, st.quotas[ns])
 	return queued, scheduled, running, fleet, quotas, true
 }
 
 // SchedulerLoop is a leader-elected Runnable that owns admission decisions for
 // GPUWorkloads (scale-friendly architecture). When run with leader election,
 // only the elected leader runs this loop. It maintains an in-memory scheduling
-// queue fed by watch/cache events (25A.2). Scheduling is triggered on events
+// queue fed by watch/cache events. Scheduling is triggered on events
 // (new Queued workload, workload completion/preemption, pool/quota changes)
-// instead of timer-based requeues (25A.3).
+// instead of timer-based requeues.
 type SchedulerLoop struct {
 	Client    client.Client
 	Scheme    *runtime.Scheme
 	Cache     cache.Cache
 	Simulator WorkloadRuntimeSimulator
 	Recorder  record.EventRecorder
+	// ClaimableProducer, when set, is used to publish identifiers of workloads
+	// that have just transitioned to Phase=Scheduled so workers can discover
+	// claimable work via a queue instead of an informer cache.
+	ClaimableProducer ClaimableProducer
 
 	// MaxAdmissionsPerCycle caps how many workloads are admitted in one
 	// scheduling cycle (batching). 0 or 1 means one per cycle; >1 allows
-	// multiple admissions when capacity allows (25A.7).
+	// multiple admissions when capacity allows.
 	MaxAdmissionsPerCycle int
 	// MinCycleInterval is the minimum time between the start of two
-	// consecutive scheduling cycles (rate limiting). 0 disables (25A.7).
+	// consecutive scheduling cycles (rate limiting). 0 disables.
 	MinCycleInterval time.Duration
 
 	state     *schedulerState
@@ -265,7 +266,7 @@ func (s *SchedulerLoop) requestScheduling() {
 // runSchedulingCycle runs one scheduling pass over in-memory state. It admits
 // up to MaxAdmissionsPerCycle workloads (batching) per namespace when capacity
 // allows, patches each to Admitted=True and Phase=Scheduled, and handles
-// preemption when needed (25A.4, 25A.7).
+// preemption when needed.
 func (s *SchedulerLoop) runSchedulingCycle(ctx context.Context) {
 	log := logf.FromContext(ctx)
 	log.V(1).Info("Scheduling cycle triggered")
@@ -381,7 +382,7 @@ const maxConflictRetries = 5
 // Success or any non-Conflict error is returned immediately.
 func runWithConflictRetry(op func() error) error {
 	var lastErr error
-	for attempt := 0; attempt < maxConflictRetries; attempt++ {
+	for range maxConflictRetries {
 		lastErr = op()
 		if lastErr == nil {
 			return nil
@@ -398,7 +399,7 @@ func runWithConflictRetry(op func() error) error {
 
 // markVictimsPreemptedAndRelease sets each victim's Phase to Preempted and
 // calls the simulator Preempt and Release for each so capacity is freed.
-// Status updates are retried on conflict (25A.6).
+// Status updates are retried on conflict.
 func (s *SchedulerLoop) markVictimsPreemptedAndRelease(ctx context.Context, victims []scheduler.RunningWorkload) error {
 	for _, v := range victims {
 		namespace, name, ok := strings.Cut(v.WorkloadID, "/")
@@ -442,8 +443,8 @@ func (s *SchedulerLoop) markVictimsPreemptedAndRelease(ctx context.Context, vict
 }
 
 // patchWorkloadAdmittedAndScheduled sets the workload's Admitted condition to
-// True and Phase to Scheduled (25A.4). The reconciler will then execute
-// allocation and start (actuation). Status update is retried on conflict (25A.6).
+// True and Phase to Scheduled. The reconciler will then execute
+// allocation and start (actuation). Status update is retried on conflict.
 func (s *SchedulerLoop) patchWorkloadAdmittedAndScheduled(ctx context.Context, workloadID, reason, message string) error {
 	namespace, name, ok := strings.Cut(workloadID, "/")
 	if !ok || namespace == "" || name == "" {
@@ -479,12 +480,19 @@ func (s *SchedulerLoop) patchWorkloadAdmittedAndScheduled(ctx context.Context, w
 	if err != nil {
 		return fmt.Errorf("patch workload %s: %w", workloadID, err)
 	}
+	if s.ClaimableProducer != nil {
+		if err := s.ClaimableProducer.Produce(ctx, namespace, name); err != nil {
+			// Best-effort: log and continue. The workload remains Scheduled and
+			// can still be discovered via other mechanisms if enabled.
+			logf.FromContext(ctx).Error(err, "Failed to publish claimable workload", "namespace", namespace, "name", name)
+		}
+	}
 	return nil
 }
 
 // Start runs the scheduler loop until ctx is cancelled. It implements
 // manager.Runnable. It registers informer event handlers to feed the
-// in-memory queue (25A.2) and to trigger scheduling on events (25A.3), then
+// in-memory queue and to trigger scheduling on events, then
 // runs a worker that processes scheduling cycles.
 func (s *SchedulerLoop) Start(ctx context.Context) error {
 	s.state = newSchedulerState()
@@ -514,7 +522,7 @@ func (s *SchedulerLoop) Start(ctx context.Context) error {
 	}
 
 	// Run scheduling worker: process triggers until context is cancelled.
-	// MinCycleInterval (if set) rate-limits how often cycles run (25A.7).
+	// MinCycleInterval (if set) rate-limits how often cycles run.
 	go func() {
 		for {
 			select {
@@ -547,27 +555,27 @@ func (s *SchedulerLoop) registerWorkloadInformer(ctx context.Context) error {
 		return fmt.Errorf("get GPUWorkload informer: %w", err)
 	}
 	_, err = informer.AddEventHandler(toolscache.ResourceEventHandlerFuncs{
-		AddFunc: func(obj interface{}) {
+		AddFunc: func(obj any) {
 			s.handleWorkloadAdd(obj)
 		},
-		UpdateFunc: func(oldObj, newObj interface{}) {
+		UpdateFunc: func(oldObj, newObj any) {
 			s.handleWorkloadUpdate(oldObj, newObj)
 		},
-		DeleteFunc: func(obj interface{}) {
+		DeleteFunc: func(obj any) {
 			s.handleWorkloadDelete(obj)
 		},
 	})
 	return err
 }
 
-func (s *SchedulerLoop) handleWorkloadAdd(obj interface{}) {
+func (s *SchedulerLoop) handleWorkloadAdd(obj any) {
 	wasQueued := s.applyWorkloadToState(obj, false)
 	if wasQueued {
 		s.requestScheduling()
 	}
 }
 
-func (s *SchedulerLoop) handleWorkloadUpdate(oldObj, newObj interface{}) {
+func (s *SchedulerLoop) handleWorkloadUpdate(oldObj, newObj any) {
 	var oldPhase schedulerv1alpha1.GPUWorkloadPhase
 	if w, ok := oldObj.(*schedulerv1alpha1.GPUWorkload); ok {
 		oldPhase = w.Status.Phase
@@ -583,7 +591,7 @@ func (s *SchedulerLoop) handleWorkloadUpdate(oldObj, newObj interface{}) {
 	}
 }
 
-func (s *SchedulerLoop) handleWorkloadDelete(obj interface{}) {
+func (s *SchedulerLoop) handleWorkloadDelete(obj any) {
 	if d, ok := obj.(toolscache.DeletedFinalStateUnknown); ok {
 		obj = d.Obj
 	}
@@ -596,7 +604,7 @@ func (s *SchedulerLoop) handleWorkloadDelete(obj interface{}) {
 
 // applyWorkloadToState updates in-memory state from a workload add/update/delete.
 // For add/update (deleted=false) it returns true if the workload is Queued.
-func (s *SchedulerLoop) applyWorkloadToState(obj interface{}, deleted bool) bool {
+func (s *SchedulerLoop) applyWorkloadToState(obj any, deleted bool) bool {
 	if d, ok := obj.(toolscache.DeletedFinalStateUnknown); ok {
 		obj = d.Obj
 	}
@@ -627,34 +635,14 @@ func (s *SchedulerLoop) applyWorkloadToState(obj interface{}, deleted bool) bool
 		if w.Status.QueuedAt != nil {
 			queuedAt = w.Status.QueuedAt.Time
 		}
-		s.state.upsertQueued(ns, scheduler.QueuedWorkload{
-			WorkloadID:   workloadID,
-			Tenant:       w.Spec.Tenant,
-			Priority:     w.Spec.Priority,
-			QueuedAt:     queuedAt,
-			GPUCount:     int(w.Spec.GPUCount),
-			GPUMemoryMiB: int(w.Spec.GPUMemoryMiB),
-			Profile:      strings.ToLower(strings.TrimSpace(w.Spec.Profile)),
-			Tokens:       w.Spec.Tokens,
-			Kind:         mapWorkloadKind(w.Spec.Kind),
-		})
+		s.state.upsertQueued(ns, GPUWorkloadToQueuedWorkload(w, workloadID, queuedAt))
 		return true
 	case schedulerv1alpha1.GPUWorkloadPhaseScheduled:
 		startedAt := time.Now()
 		if w.Status.QueuedAt != nil {
 			startedAt = w.Status.QueuedAt.Time
 		}
-		s.state.upsertScheduled(ns, scheduler.RunningWorkload{
-			WorkloadID:   workloadID,
-			Tenant:       w.Spec.Tenant,
-			Priority:     w.Spec.Priority,
-			StartedAt:    startedAt,
-			GPUCount:     int(w.Spec.GPUCount),
-			GPUMemoryMiB: int(w.Spec.GPUMemoryMiB),
-			Profile:      strings.ToLower(strings.TrimSpace(w.Spec.Profile)),
-			Tokens:       w.Spec.Tokens,
-			Kind:         mapWorkloadKind(w.Spec.Kind),
-		})
+		s.state.upsertScheduled(ns, GPUWorkloadToRunningWorkload(w, workloadID, startedAt))
 		return false
 	case schedulerv1alpha1.GPUWorkloadPhaseRunning:
 		startedAt := time.Now()
@@ -662,17 +650,7 @@ func (s *SchedulerLoop) applyWorkloadToState(obj interface{}, deleted bool) bool
 			startedAt = w.Status.QueuedAt.Time
 		}
 		s.state.removeWorkload(ns, workloadID)
-		s.state.upsertRunning(ns, scheduler.RunningWorkload{
-			WorkloadID:   workloadID,
-			Tenant:       w.Spec.Tenant,
-			Priority:     w.Spec.Priority,
-			StartedAt:    startedAt,
-			GPUCount:     int(w.Spec.GPUCount),
-			GPUMemoryMiB: int(w.Spec.GPUMemoryMiB),
-			Profile:      strings.ToLower(strings.TrimSpace(w.Spec.Profile)),
-			Tokens:       w.Spec.Tokens,
-			Kind:         mapWorkloadKind(w.Spec.Kind),
-		})
+		s.state.upsertRunning(ns, GPUWorkloadToRunningWorkload(w, workloadID, startedAt))
 		return false
 	default:
 		s.state.removeWorkload(ns, workloadID)
@@ -686,13 +664,13 @@ func (s *SchedulerLoop) registerPoolInformer(ctx context.Context) error {
 		return fmt.Errorf("get GPUNodePool informer: %w", err)
 	}
 	_, err = informer.AddEventHandler(toolscache.ResourceEventHandlerFuncs{
-		AddFunc: func(obj interface{}) {
+		AddFunc: func(obj any) {
 			s.handlePoolEvent(obj, false)
 		},
-		UpdateFunc: func(_, newObj interface{}) {
+		UpdateFunc: func(_, newObj any) {
 			s.handlePoolEvent(newObj, false)
 		},
-		DeleteFunc: func(obj interface{}) {
+		DeleteFunc: func(obj any) {
 			s.handlePoolEvent(obj, true)
 		},
 	})
@@ -717,7 +695,8 @@ func (s *SchedulerLoop) refreshFleetFromAPI(ctx context.Context) error {
 	return nil
 }
 
-func (s *SchedulerLoop) handlePoolEvent(obj interface{}, deleted bool) {
+//nolint:unparam // deleted is passed by callers for consistency with other handlers; pool events always refresh fleet.
+func (s *SchedulerLoop) handlePoolEvent(obj any, deleted bool) {
 	if d, ok := obj.(toolscache.DeletedFinalStateUnknown); ok {
 		obj = d.Obj
 	}
@@ -779,20 +758,20 @@ func (s *SchedulerLoop) registerQuotaInformer(ctx context.Context) error {
 		return fmt.Errorf("get TenantQuota informer: %w", err)
 	}
 	_, err = informer.AddEventHandler(toolscache.ResourceEventHandlerFuncs{
-		AddFunc: func(obj interface{}) {
+		AddFunc: func(obj any) {
 			s.handleQuotaEvent(obj, false)
 		},
-		UpdateFunc: func(_, newObj interface{}) {
+		UpdateFunc: func(_, newObj any) {
 			s.handleQuotaEvent(newObj, false)
 		},
-		DeleteFunc: func(obj interface{}) {
+		DeleteFunc: func(obj any) {
 			s.handleQuotaEvent(obj, true)
 		},
 	})
 	return err
 }
 
-func (s *SchedulerLoop) handleQuotaEvent(obj interface{}, deleted bool) {
+func (s *SchedulerLoop) handleQuotaEvent(obj any, deleted bool) {
 	if d, ok := obj.(toolscache.DeletedFinalStateUnknown); ok {
 		obj = d.Obj
 	}

@@ -1,0 +1,136 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Containers",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "RSS memory; steady climb can indicate a memory leak",
+      "fieldConfig": { "defaults": { "unit": "bytes", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 1 },
+      "id": 2,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "container_memory_rss{namespace=~\"$namespace\", container=~\"manager|submitter|simulator|worker\"}", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "Memory (RSS)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "CPU usage rate per pod; use as a proxy for load when CFS throttling metrics are not available",
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 1 },
+      "id": 3,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "rate(container_cpu_usage_seconds_total{namespace=~\"$namespace\", container=~\"manager|submitter|simulator|worker\"}[5m])", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "CPU usage (rate)",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 7 },
+      "id": 4,
+      "title": "Go runtime",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Goroutine count per pod; growing over time can indicate a goroutine leak",
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 8 },
+      "id": 5,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "go_goroutines{namespace=~\"$namespace\"}", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "Goroutines",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Go heap in-use; steady climb can indicate a memory leak",
+      "fieldConfig": { "defaults": { "unit": "bytes", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 8 },
+      "id": 6,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "go_memstats_heap_inuse_bytes{namespace=~\"$namespace\"}", "legendFormat": "{{ pod }}", "refId": "A" }],
+      "title": "Go heap in-use",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 14 },
+      "id": 7,
+      "title": "Operator workqueues",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Controller workqueue depth; growing depth can drive CPU and indicate falling behind",
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 15 },
+      "id": 8,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "workqueue_depth{namespace=~\"$namespace\"}", "legendFormat": "{{ name }}", "refId": "A" }],
+      "title": "Workqueue depth",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Reconciliation rate per controller (controller_runtime_reconcile_total); runaway rate can indicate a loop or leak",
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 15 },
+      "id": 9,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "sum(rate(controller_runtime_reconcile_total{namespace=~\"$namespace\"}[5m])) by (controller)", "legendFormat": "{{ controller }}", "refId": "A" }],
+      "title": "Reconcile rate",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["gpu-scheduler", "runtime", "diagnostics"],
+  "templating": {
+    "list": [
+      {
+        "current": { "selected": false, "text": "Prometheus", "value": "Prometheus" },
+        "hide": 0,
+        "includeAll": false,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource",
+        "datasource": { "type": "prometheus", "uid": "prometheus" }
+      },
+      {
+        "current": { "selected": true, "text": "system", "value": "system" },
+        "datasource": { "type": "prometheus", "uid": "${datasource}" },
+        "hide": 0,
+        "includeAll": true,
+        "name": "namespace",
+        "options": [],
+        "query": "label_values(container_memory_working_set_bytes{container=~\"manager|submitter|simulator|worker\"}, namespace)",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
+  },
+  "time": { "from": "now-1h", "to": "now" },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Runtime & diagnostics",
+  "uid": "gpu-scheduler-runtime-diagnostics",
+  "version": 1
+}

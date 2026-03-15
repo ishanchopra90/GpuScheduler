@@ -53,7 +53,7 @@ func TestWeightedRoundRobinByTenant_RespectsWeights(t *testing.T) {
 		"a": {Weight: 2},
 		"b": {Weight: 1},
 	})
-	ids := []string{}
+	ids := make([]string, 0, len(got))
 	for _, w := range got {
 		ids = append(ids, w.WorkloadID)
 	}

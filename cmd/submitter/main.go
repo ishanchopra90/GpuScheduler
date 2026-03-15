@@ -51,7 +51,7 @@ func main() {
 		go func() {
 			_ = srv.ListenAndServe()
 		}()
-		defer srv.Shutdown(context.Background())
+		defer func() { _ = srv.Shutdown(context.Background()) }()
 	}
 
 	cfg, err := config.GetConfig()

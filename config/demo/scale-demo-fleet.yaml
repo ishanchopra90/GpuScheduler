@@ -1,0 +1,16 @@
+# GPUNodePool for the scale-demo (section 4 of docs/demo-results-scale.md).
+# Single pool, 24 GPUs, h100_sxm profile so the scheduler has capacity and the
+# limiter is admission throughput instead of "no GPUs." Apply before running the
+# sustained-rate producer.
+apiVersion: scheduler.ishanchopra.dev/v1alpha1
+kind: GPUNodePool
+metadata:
+  name: gpunodepool-scale-demo
+  namespace: default
+  labels:
+    app.kubernetes.io/name: gpu-scheduler
+spec:
+  nodeCount: 6
+  devicesPerNode: 4
+  memoryMiBPerDevice: 81920
+  profile: h100_sxm

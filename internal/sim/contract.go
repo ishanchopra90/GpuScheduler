@@ -4,6 +4,7 @@ import (
 	_ "embed"
 	"encoding/json"
 	"fmt"
+	"maps"
 	"math"
 	"math/rand"
 	"sort"
@@ -18,7 +19,10 @@ import (
 // RegisterFleet registers or updates one logical fleet pool in the simulator.
 // poolKey uniquely identifies the pool (e.g. namespace/name of the GPUNodePool CR).
 // Multiple pools can be registered; their devices are combined for allocation.
-// Empty poolKey is treated as "_default" for backward compatibility.
+// DefaultPoolKey is the pool key used when the client does not specify one.
+const DefaultPoolKey = "_default"
+
+// Empty poolKey is treated as DefaultPoolKey for backward compatibility.
 //
 // The operator calls this when a GPUNodePool CR is created or updated. Idempotent:
 // calling again with the same poolKey updates that pool's capacity.
@@ -27,7 +31,7 @@ func (s *Simulator) RegisterFleet(poolKey string, spec GPUNodePoolSpec) error {
 		return fmt.Errorf("simulator is nil")
 	}
 	if poolKey == "" {
-		poolKey = "_default"
+		poolKey = DefaultPoolKey
 	}
 	nodes, err := buildNodesWithPoolKey(spec, poolKey)
 	if err != nil {
@@ -110,7 +114,7 @@ func (s *Simulator) AllocateWithOptions(workloadID string, gpuCount int, memMiB 
 	if _, exists := s.allocations[workloadID]; exists {
 		return nil, fmt.Errorf("workload %q already has an allocation", workloadID)
 	}
-	if s.pools == nil || len(s.pools) == 0 {
+	if len(s.pools) == 0 {
 		return nil, fmt.Errorf("fleet is not registered")
 	}
 	if opts.MaxNodes < 0 {
@@ -318,6 +322,8 @@ func (s *Simulator) Start(workloadID string, tokens int64, profile string) (runI
 
 // StartWithRuntimeInput begins simulated execution using an explicit runtime model input.
 // This is the preferred API for mixed workload kinds and runtime tuning knobs.
+//
+//nolint:gocyclo // Branches over workload kind and validation; splitting would obscure flow.
 func (s *Simulator) StartWithRuntimeInput(input RuntimeInput) (runID string, err error) {
 	if s == nil {
 		return "", fmt.Errorf("simulator is nil")
@@ -672,9 +678,7 @@ func mustLoadHardwareProfilesFromJSON(b []byte) map[string]HardwareProfile {
 // HardwareProfiles returns a copy of known hardware profiles keyed by profile name.
 func HardwareProfiles() map[string]HardwareProfile {
 	out := make(map[string]HardwareProfile, len(hardwareProfiles))
-	for k, v := range hardwareProfiles {
-		out[k] = v
-	}
+	maps.Copy(out, hardwareProfiles)
 	return out
 }
 

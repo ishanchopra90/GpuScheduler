@@ -1,0 +1,8002 @@
+[
+  {
+    "request_id": "scale-wl-1",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-2",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-3",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-4",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-5",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-6",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-7",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-8",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-9",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-10",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-11",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-12",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-13",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-14",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-15",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-16",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-17",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-18",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-19",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-20",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-21",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-22",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-23",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-24",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-25",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-26",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-27",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-28",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-29",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-30",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-31",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-32",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-33",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-34",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-35",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-36",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-37",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-38",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-39",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-40",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-41",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-42",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-43",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-44",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-45",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-46",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-47",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-48",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-49",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-50",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-51",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-52",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-53",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-54",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-55",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-56",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-57",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-58",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-59",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-60",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-61",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-62",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-63",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-64",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-65",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-66",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-67",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-68",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-69",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-70",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-71",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-72",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-73",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-74",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-75",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-76",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-77",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-78",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-79",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-80",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-81",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-82",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-83",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-84",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-85",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-86",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-87",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-88",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-89",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-90",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-91",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-92",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-93",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-94",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-95",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-96",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-97",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-98",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-99",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-100",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-101",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-102",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-103",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-104",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-105",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-106",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-107",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-108",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-109",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-110",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-111",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-112",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-113",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-114",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-115",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-116",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-117",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-118",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-119",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-120",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-121",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-122",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-123",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-124",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-125",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-126",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-127",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-128",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-129",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-130",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-131",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-132",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-133",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-134",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-135",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-136",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-137",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-138",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-139",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-140",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-141",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-142",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-143",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-144",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-145",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-146",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-147",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-148",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-149",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-150",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-151",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-152",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-153",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-154",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-155",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-156",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-157",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-158",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-159",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-160",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-161",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-162",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-163",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-164",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-165",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-166",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-167",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-168",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-169",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-170",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-171",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-172",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-173",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-174",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-175",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-176",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-177",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-178",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-179",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-180",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-181",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-182",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-183",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-184",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-185",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-186",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-187",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-188",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-189",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-190",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-191",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-192",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-193",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-194",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-195",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-196",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-197",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-198",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-199",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-200",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-201",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-202",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-203",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-204",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-205",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-206",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-207",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-208",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-209",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-210",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-211",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-212",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-213",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-214",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-215",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-216",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-217",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-218",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-219",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-220",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-221",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-222",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-223",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-224",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-225",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-226",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-227",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-228",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-229",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-230",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-231",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-232",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-233",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-234",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-235",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-236",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-237",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-238",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-239",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-240",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-241",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-242",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-243",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-244",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-245",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-246",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-247",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-248",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-249",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-250",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-251",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-252",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-253",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-254",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-255",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-256",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-257",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-258",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-259",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-260",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-261",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-262",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-263",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-264",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-265",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-266",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-267",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-268",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-269",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-270",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-271",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-272",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-273",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-274",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-275",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-276",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-277",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-278",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-279",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-280",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-281",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-282",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-283",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-284",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-285",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-286",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-287",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-288",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-289",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-290",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-291",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-292",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-293",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-294",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-295",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-296",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-297",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-298",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-299",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-300",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-301",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-302",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-303",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-304",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-305",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-306",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-307",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-308",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-309",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-310",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-311",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-312",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-313",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-314",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-315",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-316",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-317",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-318",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-319",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-320",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-321",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-322",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-323",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-324",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-325",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-326",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-327",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-328",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-329",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-330",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-331",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-332",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-333",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-334",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-335",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-336",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-337",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-338",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-339",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-340",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-341",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-342",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-343",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-344",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-345",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-346",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-347",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-348",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-349",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-350",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-351",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-352",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-353",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-354",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-355",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-356",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-357",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-358",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-359",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-360",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-361",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-362",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-363",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-364",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-365",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-366",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-367",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-368",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-369",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-370",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-371",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-372",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-373",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-374",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-375",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-376",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-377",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-378",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-379",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-380",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-381",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-382",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-383",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-384",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-385",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-386",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-387",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-388",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-389",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-390",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-391",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-392",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-393",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-394",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-395",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-396",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-397",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-398",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-399",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-400",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-401",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-402",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-403",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-404",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-405",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-406",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-407",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-408",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-409",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-410",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-411",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-412",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-413",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-414",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-415",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-416",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-417",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-418",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-419",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-420",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-421",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-422",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-423",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-424",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-425",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-426",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-427",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-428",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-429",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-430",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-431",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-432",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-433",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-434",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-435",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-436",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-437",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-438",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-439",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-440",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-441",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-442",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-443",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-444",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-445",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-446",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-447",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-448",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-449",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-450",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-451",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-452",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-453",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-454",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-455",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-456",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-457",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-458",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-459",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-460",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-461",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-462",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-463",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-464",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-465",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-466",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-467",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-468",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-469",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-470",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-471",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-472",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-473",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-474",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-475",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-476",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-477",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-478",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-479",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-480",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-481",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-482",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-483",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-484",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-485",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-486",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-487",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-488",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-489",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-490",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-491",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-492",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-493",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-494",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-495",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-496",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-497",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-498",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-499",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  },
+  {
+    "request_id": "scale-wl-500",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 1,
+    "gpuMemoryMiB": 81920,
+    "tokens": 1000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 32,
+      "microBatchSize": 8,
+      "gradAccumSteps": 1,
+      "sequenceLength": 1024
+    }
+  }
+]

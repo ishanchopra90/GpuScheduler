@@ -63,6 +63,9 @@ spec:
         args:
           - --leader-elect
           - --health-probe-bind-address=:8081
+        env:
+        - name: MAX_ADMISSIONS_PER_CYCLE
+          value: "5"
         image: controller:latest
         imagePullPolicy: IfNotPresent
         name: manager

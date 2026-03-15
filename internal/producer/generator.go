@@ -79,7 +79,7 @@ func (g *Generator) Next() *kafka.WorkloadRequest {
 		Tenant:       g.Tenants[g.Rand.Intn(len(g.Tenants))],
 		Priority:     int32(g.Rand.Intn(10) + 1),
 		GPUCount:     int32(g.Rand.Intn(4) + 1),
-		GPUMemoryMiB: int32([]int32{4096, 8192, 16384, 32768, 40960, 81920}[g.Rand.Intn(6)]),
+		GPUMemoryMiB: []int32{4096, 8192, 16384, 32768, 40960, 81920}[g.Rand.Intn(6)],
 		Tokens:       g.Rand.Int63n(5_000_000) + 10_000,
 		ModelProfile: g.Profiles[g.Rand.Intn(len(g.Profiles))],
 		Kind:         g.Kinds[g.Rand.Intn(len(g.Kinds))],
@@ -130,7 +130,7 @@ func setKindPayload(g *Generator, req *kafka.WorkloadRequest) {
 	case "embedding":
 		req.Embedding = &kafka.EmbeddingPayload{
 			BatchSize:       int32(gRand(g, 8, 128)),
-			VectorDimension: int32([]int32{384, 768, 1024, 1536}[g.Rand.Intn(4)]),
+			VectorDimension: []int32{384, 768, 1024, 1536}[g.Rand.Intn(4)],
 			AvgTokenLength:  int32(gRand(g, 32, 512)),
 		}
 	case "data_preprocess":
@@ -157,6 +157,8 @@ func gRand(g *Generator, min, max int) int {
 }
 
 // gRandFloat returns a random float in [min, max].
+//
+//nolint:unparam // min is always 0 at call sites but kept for API clarity.
 func gRandFloat(g *Generator, min, max float64) float64 {
 	return min + g.Rand.Float64()*(max-min)
 }

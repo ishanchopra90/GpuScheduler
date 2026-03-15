@@ -2,8 +2,8 @@
 # Use: helm upgrade --install kube-prometheus-stack prometheus-community/kube-prometheus-stack -n monitoring --create-namespace -f deploy/monitoring/values.yaml
 #
 # - Prometheus scrapes operator via ServiceMonitor (deploy after enabling config/default ../prometheus).
-# - These additionalScrapeConfigs scrape submitter, simulator, and worker pods in namespace "system"
-#   so pipeline metrics (gpu_scheduler_*, sim_*) are available for the Grafana pipeline dashboard.
+# - These additionalScrapeConfigs scrape submitter, simulator, worker, and Kafka Exporter
+#   so pipeline metrics (gpu_scheduler_*, sim_*, kafka_consumergroup_lag) are available.
 # - KEDA worker ScaledObject expects Prometheus at http://prometheus-operated.monitoring.svc:9090;
 #   this chart creates prometheus-operated (or release name prefix) in the monitoring namespace.
 
@@ -64,3 +64,23 @@ prometheus:
             target_label: namespace
           - action: labelmap
             regex: __meta_kubernetes_pod_label_(.+)
+      # Kafka Exporter (Strimzi): consumer group lag for pipeline dashboard and KEDA.
+      # Strimzi does not create a Service for the exporter; discover pods directly.
+      - job_name: kafka-exporter
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces:
+              names: [kafka]
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_strimzi_io_name]
+            action: keep
+            regex: kafka-kafka-exporter
+          - source_labels: [__meta_kubernetes_pod_ip]
+            target_label: __address__
+            replacement: ${1}:9404
+          - source_labels: [__meta_kubernetes_pod_name]
+            target_label: pod
+          - source_labels: [__meta_kubernetes_namespace]
+            target_label: namespace
+          - target_label: job
+            replacement: kafka-exporter

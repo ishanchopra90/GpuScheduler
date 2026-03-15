@@ -1,0 +1,14 @@
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaTopic
+metadata:
+  name: gpu-workloads-claimable
+  labels:
+    strimzi.io/cluster: kafka
+spec:
+  topicName: gpu.workloads.claimable
+  partitions: 16
+  replicas: 1
+  config:
+    retention.ms: 86400000
+    segment.bytes: 1073741824
+

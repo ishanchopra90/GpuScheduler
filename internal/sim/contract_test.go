@@ -11,7 +11,7 @@ import (
 func mustRegisterFleet(t *testing.T, spec GPUNodePoolSpec) *Simulator {
 	t.Helper()
 	s := NewSimulator()
-	if err := s.RegisterFleet("_default", spec); err != nil {
+	if err := s.RegisterFleet(DefaultPoolKey, spec); err != nil {
 		t.Fatalf("RegisterFleet() error = %v", err)
 	}
 	return s
@@ -225,7 +225,7 @@ func TestAllocateWithOptions_ConstraintsAndFilters(t *testing.T) {
 
 	t.Run("preferred device type filters eligible devices", func(t *testing.T) {
 		s := mustRegisterFleet(t, spec)
-		nodes := s.pools["_default"]
+		nodes := s.pools[DefaultPoolKey]
 		for _, d := range nodes[0].Devices {
 			d.DeviceType = "type-a"
 		}
@@ -253,7 +253,7 @@ func TestAllocateWithOptions_ConstraintsAndFilters(t *testing.T) {
 
 	t.Run("preferred profile filters eligible devices", func(t *testing.T) {
 		s := mustRegisterFleet(t, spec)
-		nodes := s.pools["_default"]
+		nodes := s.pools[DefaultPoolKey]
 		for _, d := range nodes[0].Devices {
 			d.Profile = "p1"
 		}

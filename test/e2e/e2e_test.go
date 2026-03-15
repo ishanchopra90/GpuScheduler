@@ -478,19 +478,35 @@ var _ = Describe("Manager", Ordered, func() {
 				g.Expect(err).NotTo(HaveOccurred())
 			}, 3*time.Minute, 5*time.Second).Should(Succeed())
 
-			By("patching operator for worker-pool, simulator URL, and STRICT_REMOTE_FLEET (fleet registration must succeed)")
+			By("patching operator for worker-pool, simulator URL, STRICT_REMOTE_FLEET, and claimable queue (fleet registration must succeed)")
 			cmd = exec.Command("kubectl", "set", "env", "deployment/gpu-scheduler-controller-manager",
-				"-n", fullPipelineNS, "USE_WORKER_POOL=true", "STRICT_REMOTE_FLEET=true", "--containers=manager")
+				"-n", fullPipelineNS,
+				"USE_WORKER_POOL=true",
+				"STRICT_REMOTE_FLEET=true",
+				"KAFKA_BROKERS=kafka-kafka-bootstrap.kafka.svc.cluster.local:9092",
+				"CLAIMABLE_TOPIC=gpu.workloads.claimable",
+				"--containers=manager")
 			_, err = utils.Run(cmd)
 			Expect(err).NotTo(HaveOccurred(), "Failed to set operator env")
 			cmd = exec.Command("kubectl", "patch", "deployment", "gpu-scheduler-controller-manager", "-n", fullPipelineNS,
 				"--type=json", "-p", `[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--use-worker-pool"}, {"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--simulator-url=http://simulator.system.svc.cluster.local:8080"}]`)
 			_, err = utils.Run(cmd)
 			Expect(err).NotTo(HaveOccurred(), "Failed to patch operator with simulator URL")
+
+			By("waiting for controller-manager deployment template to include worker-pool and simulator flags")
 			Eventually(func(g Gomega) {
-				cmd := exec.Command("kubectl", "rollout", "status", "deployment/gpu-scheduler-controller-manager", "-n", fullPipelineNS, "--timeout=120s")
-				_, err := utils.Run(cmd)
+				cmd := exec.Command("kubectl", "get", "deployment", "gpu-scheduler-controller-manager",
+					"-n", fullPipelineNS,
+					"-o", "jsonpath={.spec.template.spec.containers[0].args}")
+				out, err := utils.Run(cmd)
 				g.Expect(err).NotTo(HaveOccurred())
+
+				args := strings.TrimSpace(out)
+				g.Expect(args).ToNot(BeEmpty(), "expected controller-manager deployment to have args, got: %q", out)
+				g.Expect(args).To(ContainSubstring("--use-worker-pool"),
+					"expected controller-manager deployment args to include --use-worker-pool, got: %q", args)
+				g.Expect(args).To(ContainSubstring("--simulator-url=http://simulator.system.svc.cluster.local:8080"),
+					"expected controller-manager deployment args to include simulator URL flag, got: %q", args)
 			}, 3*time.Minute, 5*time.Second).Should(Succeed())
 
 			By("deploying submitter and worker")
@@ -500,6 +516,18 @@ var _ = Describe("Manager", Ordered, func() {
 			cmd = exec.Command("kubectl", "apply", "-k", filepath.Join(projectDir, "deploy/worker-deployment"))
 			_, err = utils.Run(cmd)
 			Expect(err).NotTo(HaveOccurred(), "Failed to apply worker-deployment")
+
+			By("waiting for submitter and worker-deployment rollouts so consumer group is ready before producer runs")
+			Eventually(func(g Gomega) {
+				cmd := exec.Command("kubectl", "rollout", "status", "deployment/submitter", "-n", "system", "--timeout=120s")
+				_, err := utils.Run(cmd)
+				g.Expect(err).NotTo(HaveOccurred(), "submitter rollout")
+			}, 3*time.Minute, 5*time.Second).Should(Succeed())
+			Eventually(func(g Gomega) {
+				cmd := exec.Command("kubectl", "rollout", "status", "deployment/worker-deployment", "-n", "system", "--timeout=120s")
+				_, err := utils.Run(cmd)
+				g.Expect(err).NotTo(HaveOccurred(), "worker-deployment rollout")
+			}, 3*time.Minute, 5*time.Second).Should(Succeed())
 
 			By("applying GPUNodePool and waiting for fleet")
 			cmd = exec.Command("kubectl", "apply", "-f", filepath.Join(projectDir, "test/e2e/fixtures/gpunodepool.yaml"))

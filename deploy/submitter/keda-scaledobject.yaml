@@ -13,7 +13,7 @@ spec:
   scaleTargetRef:
     name: submitter
   minReplicaCount: 1
-  maxReplicaCount: 10
+  maxReplicaCount: 14
   pollingInterval: 15
   cooldownPeriod: 60
   advanced:

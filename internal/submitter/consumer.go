@@ -34,14 +34,14 @@ func (c *Consumer) Run(ctx context.Context) error {
 		Topic:   kafka.TopicWorkloadSubmit,
 		GroupID: c.GroupID,
 	})
-	defer reader.Close()
+	defer func() { _ = reader.Close() }()
 
 	dlqWriter := &kafkago.Writer{
 		Addr:     kafkago.TCP(c.Brokers...),
 		Topic:    c.DLQTopic,
 		Balancer: &kafkago.LeastBytes{},
 	}
-	defer dlqWriter.Close()
+	defer func() { _ = dlqWriter.Close() }()
 
 	for {
 		select {

@@ -1,0 +1,18 @@
+[
+  {
+    "request_id": "scale-wl-1",
+    "tenant": "demo-tenant",
+    "priority": 1,
+    "gpuCount": 2,
+    "gpuMemoryMiB": 81920,
+    "tokens": 2000,
+    "modelProfile": "h100_sxm",
+    "kind": "training",
+    "training": {
+      "globalBatchSize": 8,
+      "microBatchSize": 4,
+      "gradAccumSteps": 2,
+      "sequenceLength": 2048
+    }
+  }
+]

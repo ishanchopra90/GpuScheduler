@@ -67,6 +67,9 @@ spec:
     topicOperator: {}
     userOperator: {}
   kafkaExporter:
+    # Expose all consumer groups (e.g. gpu-scheduler-submitter) for lag metrics in Grafana and KEDA
+    groupRegex: ".*"
+    topicRegex: ".*"
     resources:
       requests:
         memory: 64Mi

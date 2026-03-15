@@ -1,6 +1,7 @@
 # Worker Deployment (scale-focused): long-lived pods that poll for Phase=Scheduled
-# GPUWorkloads, claim one, run simulator, update status. Scale with KEDA ScaledObject
-# (Prometheus gpu_scheduler_scheduled_workloads). Requires KEDA and Prometheus.
+# GPUWorkloads, claim one, run simulator, update status. For the ingestion bottleneck
+# demo we run at a fixed replica count (no KEDA autoscaling) so execution capacity is
+# controlled explicitly.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -10,7 +11,7 @@ metadata:
     app.kubernetes.io/name: gpu-scheduler-worker-deployment
     app.kubernetes.io/component: worker-deployment
 spec:
-  replicas: 1
+  replicas: 16
   selector:
     matchLabels:
       app.kubernetes.io/name: gpu-scheduler-worker-deployment
@@ -37,6 +38,16 @@ spec:
               value: "http://simulator:8080"
             - name: NAMESPACE
               value: "default"
+            # USE_QUEUE enables queue-based worker discovery via Kafka (option 4).
+            # When true (default here), workers consume claimable workloads from
+            # the gpu.workloads.claimable topic instead of using a watch-based
+            # informer cache for GPUWorkload.
+            - name: USE_QUEUE
+              value: "true"
+            - name: KAFKA_BROKERS
+              value: "kafka-kafka-bootstrap.kafka.svc.cluster.local:9092"
+            - name: CLAIMABLE_TOPIC
+              value: "gpu.workloads.claimable"
             # WORKER_ID defaults to HOSTNAME (pod name) if unset
           resources:
             requests:

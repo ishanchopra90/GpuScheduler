@@ -8,6 +8,11 @@ const TopicWorkloadSubmit = "gpu.workloads.submit"
 // produces failed messages here after validation errors so they can be inspected or reprocessed.
 const TopicWorkloadSubmitDLQ = "gpu.workloads.submit.dlq"
 
+// TopicWorkloadClaimable is the Kafka topic for claimable workloads. The operator produces one
+// message per workload when it transitions to Phase=Scheduled so workers can discover work
+// without maintaining a full informer cache of all GPUWorkloads.
+const TopicWorkloadClaimable = "gpu.workloads.claimable"
+
 // WorkloadRequest is the Kafka message schema for workload submission on topic gpu.workloads.submit.
 // The submitter consumes these messages and creates GPUWorkload CRs idempotently (CR name from request_id).
 // Field names and structure align with GPUWorkloadSpec for straightforward mapping.
@@ -106,4 +111,12 @@ type DistillationPayload struct {
 	TeacherProfile            string  `json:"teacherProfile,omitempty"`
 	BatchSize                 int32   `json:"batchSize"`
 	TeacherForwardOverheadPct float64 `json:"teacherForwardOverheadPct"`
+}
+
+// ClaimableWorkloadMessage is the Kafka message schema for the claimable-workloads topic.
+// It identifies a single GPUWorkload CR by namespace and name; workers fetch the latest
+// object from the API before attempting to claim and run it.
+type ClaimableWorkloadMessage struct {
+	Namespace string `json:"namespace"`
+	Name      string `json:"name"`
 }

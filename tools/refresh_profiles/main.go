@@ -65,10 +65,13 @@ func main() {
 		outPath         = flag.String("out", "internal/sim/hardware_profiles.json", "output JSON path")
 		check           = flag.Bool("check", false, "verify output is up-to-date without writing")
 		fetchSources    = flag.Bool("fetch-sources", false, "fetch official source pages and build snapshot artifacts")
-		snapshotOutPath = flag.String("snapshot-out", "tools/refresh_profiles/hardware_sources_snapshot.json", "source snapshot JSON output path")
-		sourcesDirPath  = flag.String("sources-dir", "tools/refresh_profiles/sources", "directory to save fetched source pages")
-		proposedYAML    = flag.String("proposed-yaml-out", "configs/hardware_profiles.review.yaml", "manual-review YAML output path")
-		timeoutSeconds  = flag.Int("http-timeout-seconds", 20, "HTTP timeout for source fetches")
+		snapshotOutPath = flag.String("snapshot-out",
+			"tools/refresh_profiles/hardware_sources_snapshot.json", "source snapshot JSON output path")
+		sourcesDirPath = flag.String("sources-dir", "tools/refresh_profiles/sources",
+			"directory to save fetched source pages")
+		proposedYAML = flag.String("proposed-yaml-out", "configs/hardware_profiles.review.yaml",
+			"manual-review YAML output path")
+		timeoutSeconds = flag.Int("http-timeout-seconds", 20, "HTTP timeout for source fetches")
 	)
 	flag.Parse()
 
@@ -81,7 +84,10 @@ func main() {
 	}
 
 	if *fetchSources {
-		if err := buildSourceSnapshot(profiles, *inPath, *snapshotOutPath, *sourcesDirPath, *proposedYAML, time.Duration(*timeoutSeconds)*time.Second); err != nil {
+		timeout := time.Duration(*timeoutSeconds) * time.Second
+		if err := buildSourceSnapshot(
+			profiles, *inPath, *snapshotOutPath, *sourcesDirPath, *proposedYAML, timeout,
+		); err != nil {
 			fatal(err)
 		}
 		fmt.Fprintf(os.Stderr, "refresh_profiles: wrote snapshot %s and review YAML %s\n", *snapshotOutPath, *proposedYAML)
@@ -109,7 +115,10 @@ func main() {
 	}
 }
 
-func buildSourceSnapshot(profiles []hardwareProfile, inputYAMLPath, snapshotOutPath, sourcesDirPath, proposedYAMLPath string, timeout time.Duration) error {
+func buildSourceSnapshot(
+	profiles []hardwareProfile, inputYAMLPath, snapshotOutPath, sourcesDirPath, proposedYAMLPath string,
+	timeout time.Duration,
+) error {
 	if err := os.MkdirAll(filepath.Clean(sourcesDirPath), 0o755); err != nil {
 		return fmt.Errorf("create sources dir: %w", err)
 	}
@@ -165,7 +174,9 @@ func buildSourceSnapshot(profiles []hardwareProfile, inputYAMLPath, snapshotOutP
 	return nil
 }
 
-func fetchAndStoreSource(client *http.Client, profileName string, sourceIndex int, rawURL, sourcesDirPath string) (sourceSnapshot, error) {
+func fetchAndStoreSource(
+	client *http.Client, profileName string, sourceIndex int, rawURL, sourcesDirPath string,
+) (sourceSnapshot, error) {
 	req, err := http.NewRequest(http.MethodGet, rawURL, nil)
 	if err != nil {
 		return sourceSnapshot{}, fmt.Errorf("create request for %q: %w", rawURL, err)
@@ -176,7 +187,7 @@ func fetchAndStoreSource(client *http.Client, profileName string, sourceIndex in
 	if err != nil {
 		return sourceSnapshot{}, fmt.Errorf("fetch %q: %w", rawURL, err)
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
@@ -213,7 +224,8 @@ func buildSourceFilename(profileName string, sourceIndex int, rawURL, contentTyp
 	if strings.Contains(strings.ToLower(contentType), "application/pdf") {
 		ext = ".pdf"
 	}
-	base := fmt.Sprintf("%s-%02d-%s-%s", sanitizeToken(profileName), sourceIndex, sanitizeToken(host), sanitizeToken(pathPart))
+	base := fmt.Sprintf("%s-%02d-%s-%s",
+		sanitizeToken(profileName), sourceIndex, sanitizeToken(host), sanitizeToken(pathPart))
 	return base + ext
 }
 

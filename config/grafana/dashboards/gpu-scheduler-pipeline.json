@@ -127,6 +127,83 @@
     },
     {
       "gridPos": { "h": 1, "w": 24, "x": 0, "y": 21 },
+      "id": 105,
+      "title": "Worker",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Current number of worker pods. Matches deployment worker-deployment.",
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 22 },
+      "id": 17,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "kube_deployment_status_replicas{namespace=~\"$namespace\", deployment=\"worker-deployment\"}", "legendFormat": "{{ namespace }}", "refId": "A" }],
+      "title": "Worker replicas",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 22 },
+      "id": 18,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "sum(rate(process_cpu_seconds_total{job=\"gpu-scheduler-worker\"}[5m])) by (pod)", "refId": "A" }],
+      "title": "Worker CPU (rate by pod)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 22 },
+      "id": 19,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "sum(rate(gpu_scheduler_worker_workloads_claimed_total[5m]))", "refId": "A" }],
+      "title": "Workloads claimed (rate)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 22 },
+      "id": 20,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "sum(rate(gpu_scheduler_worker_runs_completed_total[5m])) by (outcome)", "refId": "A" }],
+      "title": "Runs completed (rate by outcome)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 28 },
+      "id": 21,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "sum(rate(gpu_scheduler_worker_runs_started_total[5m]))", "refId": "A" }],
+      "title": "Runs started (rate)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "fieldConfig": { "defaults": { "unit": "s" }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 28 },
+      "id": 22,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "histogram_quantile(0.99, sum(rate(gpu_scheduler_worker_run_duration_seconds_bucket[5m])) by (le, worker_id))", "refId": "A" }],
+      "title": "Run duration p99 by worker (s)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 28 },
+      "id": 23,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "sum(rate(gpu_scheduler_worker_errors_total[5m])) by (reason)", "refId": "A" }],
+      "title": "Errors (rate by reason)",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 34 },
       "id": 103,
       "title": "Simulator",
       "type": "row"
@@ -134,7 +211,7 @@
     {
       "datasource": { "type": "prometheus", "uid": "${datasource}" },
       "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
-      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 22 },
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 35 },
       "id": 11,
       "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
       "targets": [{ "expr": "sim_devices_total", "refId": "A" }],
@@ -144,7 +221,7 @@
     {
       "datasource": { "type": "prometheus", "uid": "${datasource}" },
       "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
-      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 22 },
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 35 },
       "id": 12,
       "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
       "targets": [{ "expr": "sim_devices_allocated", "refId": "A" }],
@@ -154,7 +231,7 @@
     {
       "datasource": { "type": "prometheus", "uid": "${datasource}" },
       "fieldConfig": { "defaults": { "unit": "s" }, "overrides": [] },
-      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 22 },
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 35 },
       "id": 13,
       "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
       "targets": [{ "expr": "histogram_quantile(0.99, sum(rate(sim_run_duration_seconds_bucket[5m])) by (le, kind))", "refId": "A" }],
@@ -164,11 +241,62 @@
     {
       "datasource": { "type": "prometheus", "uid": "${datasource}" },
       "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
-      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 22 },
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 35 },
       "id": 14,
       "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
       "targets": [{ "expr": "rate(sim_allocation_failures_total[5m])", "refId": "A" }],
       "title": "Allocation failures (rate)",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 41 },
+      "id": 104,
+      "title": "Submitter scale & lag",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Current number of submitter pods (KEDA scales on consumer lag). Matches kubectl get pods -n $namespace -l app.kubernetes.io/name=gpu-scheduler-submitter.",
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 42 },
+      "id": 15,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "kube_deployment_status_replicas{namespace=~\"$namespace\", deployment=\"submitter\"}", "legendFormat": "{{ namespace }}", "refId": "A" }],
+      "title": "Submitter replicas",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Kafka consumer group lag (total per group). Derived from Strimzi Kafka Exporter: topic partition end offset minus consumergroup current offset (exporter does not expose kafka_consumergroup_lag). Prometheus must scrape the exporter (deploy/monitoring/values.yaml). Lag rises on burst, falls as submitters scale.",
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 42 },
+      "id": 16,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [{ "expr": "sum(kafka_topic_partition_current_offset{topic=\"gpu.workloads.submit\"}) - sum(kafka_consumergroup_current_offset{consumergroup=\"gpu-scheduler-submitter\", topic=\"gpu.workloads.submit\"})", "legendFormat": "gpu-scheduler-submitter", "refId": "A" }],
+      "title": "Consumer group lag",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 48 },
+      "id": 106,
+      "title": "Worker claimable queue & lag",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Kafka consumer group lag for the worker claimable queue (gpu.workloads.claimable). Computed from Strimzi Kafka Exporter as topic partition end offset minus consumergroup current offset for the gpu-scheduler-worker group. Lag rises when the scheduler admits work faster than workers can claim it.",
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 49 },
+      "id": 24,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [
+        {
+          "expr": "sum(kafka_topic_partition_current_offset{topic=\"gpu.workloads.claimable\"}) - sum(kafka_consumergroup_current_offset{consumergroup=\"gpu-scheduler-worker\", topic=\"gpu.workloads.claimable\"})",
+          "legendFormat": "gpu-scheduler-worker",
+          "refId": "A"
+        }
+      ],
+      "title": "Worker claimable queue lag",
       "type": "timeseries"
     }
   ],
@@ -190,6 +318,20 @@
         "skipUrlSync": false,
         "type": "datasource",
         "datasource": { "type": "prometheus", "uid": "prometheus" }
+      },
+      {
+        "current": { "selected": true, "text": "system", "value": "system" },
+        "datasource": { "type": "prometheus", "uid": "${datasource}" },
+        "hide": 0,
+        "includeAll": true,
+        "name": "namespace",
+        "options": [],
+        "query": "label_values(kube_deployment_status_replicas{deployment=~\"submitter|worker-deployment\"}, namespace)",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
       }
     ]
   },

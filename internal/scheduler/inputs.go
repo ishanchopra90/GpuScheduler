@@ -2,6 +2,7 @@ package scheduler
 
 import (
 	"fmt"
+	"maps"
 	"strings"
 	"time"
 )
@@ -114,6 +115,8 @@ type SchedulingInputs struct {
 }
 
 // Validate checks the minimal contract for queued workloads input.
+//
+//nolint:gocyclo // Many validation branches; splitting would scatter contract.
 func (in SchedulingInputs) Validate() error {
 	seen := make(map[string]struct{}, len(in.QueuedWorkloads)+len(in.ScheduledWorkloads)+len(in.RunningWorkloads))
 	for i, w := range in.QueuedWorkloads {
@@ -288,9 +291,7 @@ func ApplyVirtualAdmission(inputs SchedulingInputs, admitted QueuedWorkload, now
 			out.QueuedWorkloads = append(out.QueuedWorkloads, q)
 		}
 	}
-	for _, r := range inputs.RunningWorkloads {
-		out.RunningWorkloads = append(out.RunningWorkloads, r)
-	}
+	out.RunningWorkloads = append(out.RunningWorkloads, inputs.RunningWorkloads...)
 	out.RunningWorkloads = append(out.RunningWorkloads, RunningWorkload{
 		WorkloadID:   admitted.WorkloadID,
 		Tenant:       admitted.Tenant,
@@ -306,9 +307,7 @@ func ApplyVirtualAdmission(inputs SchedulingInputs, admitted QueuedWorkload, now
 	out.FleetFreeCapacity.TotalFreeDevices = inputs.FleetFreeCapacity.TotalFreeDevices
 	out.FleetFreeCapacity.TotalFreeMemoryMiB = inputs.FleetFreeCapacity.TotalFreeMemoryMiB
 	out.FleetFreeCapacity.ByProfile = make(map[string]ProfileFreeCapacity)
-	for k, v := range inputs.FleetFreeCapacity.ByProfile {
-		out.FleetFreeCapacity.ByProfile[k] = v
-	}
+	maps.Copy(out.FleetFreeCapacity.ByProfile, inputs.FleetFreeCapacity.ByProfile)
 	cap, ok := out.FleetFreeCapacity.ByProfile[admitted.Profile]
 	if !ok {
 		return out, fmt.Errorf("profile %q not in fleet", admitted.Profile)

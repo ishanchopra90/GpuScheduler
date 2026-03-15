@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+//nolint:unparam // tenant varies in tests but helper accepts it for clarity.
 func rw(id string, tenant string, priority int32, startedAt int64, gpuCount int, profile string) RunningWorkload {
 	return RunningWorkload{
 		WorkloadID:   id,

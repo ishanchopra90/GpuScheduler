@@ -65,7 +65,7 @@ func (c *HTTPSimClient) Allocate(workloadID string, gpuCount, memMiB int, profil
 	if err != nil {
 		return err
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 	if resp.StatusCode == http.StatusOK || resp.StatusCode == http.StatusConflict {
 		return nil
 	}
@@ -95,7 +95,7 @@ func (c *HTTPSimClient) Start(input sim.RuntimeInput) (runID string, err error) 
 	if err != nil {
 		return "", err
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 	if resp.StatusCode != http.StatusOK {
 		var errResp struct{ Error string }
 		_ = json.NewDecoder(resp.Body).Decode(&errResp)
@@ -122,7 +122,7 @@ func (c *HTTPSimClient) GetRunStatus(runID string) (sim.RunStatus, error) {
 	if err != nil {
 		return "", err
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 	if resp.StatusCode != http.StatusOK {
 		var errResp struct{ Error string }
 		_ = json.NewDecoder(resp.Body).Decode(&errResp)
@@ -149,7 +149,7 @@ func (c *HTTPSimClient) Release(workloadID string) error {
 	if err != nil {
 		return err
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 	if resp.StatusCode == http.StatusOK {
 		return nil
 	}

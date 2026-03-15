@@ -20,7 +20,6 @@ import (
 
 	schedulerv1alpha1 "github.com/ishanchopra/gpu-scheduler/api/v1alpha1"
 	"github.com/ishanchopra/gpu-scheduler/internal/metrics"
-	"github.com/ishanchopra/gpu-scheduler/internal/scheduler"
 	"github.com/ishanchopra/gpu-scheduler/internal/sim"
 	"github.com/ishanchopra/gpu-scheduler/internal/worker"
 )
@@ -39,6 +38,7 @@ type GPUWorkloadReconciler struct {
 const gpuWorkloadFinalizer = "scheduler.ishanchopra.dev/gpuworkload-finalizer"
 const conditionTypeAdmitted = "Admitted"
 const annotationCompletionCounted = "scheduler.ishanchopra.dev/completion-counted"
+const annotationValueTrue = "true"
 
 func isTerminalPhase(phase schedulerv1alpha1.GPUWorkloadPhase) bool {
 	switch phase {
@@ -78,6 +78,8 @@ type WorkloadRuntimeSimulator interface {
 //
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.23.1/pkg/reconcile
+//
+//nolint:gocyclo // Reconcile branches over phase and simulator state; splitting would obscure flow.
 func (r *GPUWorkloadReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	log := logf.FromContext(ctx)
 	workload := &schedulerv1alpha1.GPUWorkload{}
@@ -93,7 +95,7 @@ func (r *GPUWorkloadReconciler) Reconcile(ctx context.Context, req ctrl.Request)
 	// once (e.g. when worker set Succeeded) and release the local simulator allocation.
 	if workload.DeletionTimestamp.IsZero() && isTerminalPhase(workload.Status.Phase) {
 		needRecordCompletion := workload.Status.Phase == schedulerv1alpha1.GPUWorkloadPhaseSucceeded &&
-			(workload.Annotations == nil || workload.Annotations[annotationCompletionCounted] != "true")
+			(workload.Annotations == nil || workload.Annotations[annotationCompletionCounted] != annotationValueTrue)
 		if needRecordCompletion {
 			metrics.WorkloadCompletionsCounter.Inc()
 			if !workload.CreationTimestamp.IsZero() {
@@ -102,7 +104,7 @@ func (r *GPUWorkloadReconciler) Reconcile(ctx context.Context, req ctrl.Request)
 			if workload.Annotations == nil {
 				workload.Annotations = make(map[string]string)
 			}
-			workload.Annotations[annotationCompletionCounted] = "true"
+			workload.Annotations[annotationCompletionCounted] = annotationValueTrue
 			if err := r.Update(ctx, workload); err != nil {
 				log.V(1).Info("Failed to set completion-counted annotation", "error", err)
 			}
@@ -237,6 +239,7 @@ func (r *GPUWorkloadReconciler) executeAdmission(ctx context.Context, workload *
 	return nil
 }
 
+//nolint:unused // Used when USE_WORKER_POOL with legacy Job-per-workload path.
 func (r *GPUWorkloadReconciler) ensureWorkerJob(ctx context.Context, workload *schedulerv1alpha1.GPUWorkload) error {
 	jobName := workload.Name + "-job"
 	existing := &batchv1.Job{}
@@ -286,6 +289,8 @@ func (r *GPUWorkloadReconciler) ensureWorkerJob(ctx context.Context, workload *s
 // syncWorkloadPhaseFromWorkerJob checks the worker Job status and updates the workload Phase to
 // Succeeded or Failed when the Job completes. Returns true when the workload phase was updated
 // (or already terminal), false when the Job is still running.
+//
+//nolint:unused // Used when USE_WORKER_POOL with legacy Job-per-workload path.
 func (r *GPUWorkloadReconciler) syncWorkloadPhaseFromWorkerJob(ctx context.Context, workload *schedulerv1alpha1.GPUWorkload) (bool, error) {
 	jobName := workload.Name + "-job"
 	job := &batchv1.Job{}
@@ -311,7 +316,7 @@ func (r *GPUWorkloadReconciler) syncWorkloadPhaseFromWorkerJob(ctx context.Conte
 		if workload.Annotations == nil {
 			workload.Annotations = make(map[string]string)
 		}
-		workload.Annotations[annotationCompletionCounted] = "true"
+		workload.Annotations[annotationCompletionCounted] = annotationValueTrue
 	}
 	if err := r.Status().Update(ctx, workload); err != nil {
 		return false, err
@@ -348,6 +353,7 @@ func (r *GPUWorkloadReconciler) syncWorkloadPhaseFromWorkerJob(ctx context.Conte
 	return true, nil
 }
 
+//nolint:unused // Used by syncWorkloadPhaseFromWorkerJob (legacy worker Job path).
 func isJobFailed(job *batchv1.Job) bool {
 	for _, c := range job.Status.Conditions {
 		if c.Type == batchv1.JobFailed && c.Status == corev1.ConditionTrue {
@@ -362,7 +368,7 @@ func buildRuntimeInput(workloadID string, workload *schedulerv1alpha1.GPUWorkloa
 		WorkloadID: workloadID,
 		Tokens:     workload.Spec.Tokens,
 		Profile:    strings.ToLower(strings.TrimSpace(workload.Spec.Profile)),
-		Kind:       sim.WorkloadKind(mapWorkloadKind(workload.Spec.Kind)),
+		Kind:       sim.WorkloadKind(MapWorkloadKind(workload.Spec.Kind)),
 	}
 
 	if workload.Spec.Training != nil {
@@ -460,7 +466,7 @@ func (r *GPUWorkloadReconciler) pollRunningStatus(ctx context.Context, workload 
 		return false, err
 	}
 
-	targetPhase := workload.Status.Phase
+	var targetPhase schedulerv1alpha1.GPUWorkloadPhase
 	switch status {
 	case sim.RunStatusRunning:
 		return false, nil
@@ -479,7 +485,7 @@ func (r *GPUWorkloadReconciler) pollRunningStatus(ctx context.Context, workload 
 			if workload.Annotations == nil {
 				workload.Annotations = make(map[string]string)
 			}
-			workload.Annotations[annotationCompletionCounted] = "true"
+			workload.Annotations[annotationCompletionCounted] = annotationValueTrue
 		}
 		if err := r.Status().Update(ctx, workload); err != nil {
 			return false, err
@@ -516,29 +522,6 @@ func (r *GPUWorkloadReconciler) pollRunningStatus(ctx context.Context, workload 
 		}
 	}
 	return true, nil
-}
-
-func mapWorkloadKind(kind schedulerv1alpha1.WorkloadKind) scheduler.WorkloadKind {
-	switch kind {
-	case schedulerv1alpha1.WorkloadKindTraining:
-		return scheduler.WorkloadKindTraining
-	case schedulerv1alpha1.WorkloadKindInference:
-		return scheduler.WorkloadKindInference
-	case schedulerv1alpha1.WorkloadKindEval:
-		return scheduler.WorkloadKindEval
-	case schedulerv1alpha1.WorkloadKindFineTune:
-		return scheduler.WorkloadKindFineTune
-	case schedulerv1alpha1.WorkloadKindRLHF:
-		return scheduler.WorkloadKindRLHF
-	case schedulerv1alpha1.WorkloadKindEmbedding:
-		return scheduler.WorkloadKindEmbedding
-	case schedulerv1alpha1.WorkloadKindDataPreprocess:
-		return scheduler.WorkloadKindDataPreprocess
-	case schedulerv1alpha1.WorkloadKindDistillation:
-		return scheduler.WorkloadKindDistillation
-	default:
-		return scheduler.WorkloadKind(kind)
-	}
 }
 
 // SetupWithManager sets up the controller with the Manager.

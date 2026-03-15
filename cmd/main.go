@@ -4,6 +4,7 @@ import (
 	"crypto/tls"
 	"flag"
 	"os"
+	"strconv"
 	"strings"
 
 	_ "k8s.io/client-go/plugin/pkg/client/auth"
@@ -45,17 +46,20 @@ func main() {
 	var probeAddr string
 	var secureMetrics bool
 	var enableHTTP2 bool
-	flag.StringVar(&metricsAddr, "metrics-bind-address", "0", "The address the metrics endpoint binds to. Use :8443 for HTTPS or :8080 for HTTP, or 0 to disable.")
+	flag.StringVar(&metricsAddr, "metrics-bind-address", "0",
+		"The address the metrics endpoint binds to. Use :8443 for HTTPS or :8080 for HTTP, or 0 to disable.")
 	flag.StringVar(&probeAddr, "health-probe-bind-address", ":8081", "The address the probe endpoint binds to.")
 	flag.BoolVar(&enableLeaderElection, "leader-elect", false, "Enable leader election for controller manager.")
 	flag.BoolVar(&secureMetrics, "metrics-secure", true, "If set, the metrics endpoint is served securely via HTTPS.")
 	flag.StringVar(&webhookCertPath, "webhook-cert-path", "", "The directory that contains the webhook certificate.")
 	flag.StringVar(&webhookCertName, "webhook-cert-name", "tls.crt", "The name of the webhook certificate file.")
 	flag.StringVar(&webhookCertKey, "webhook-cert-key", "tls.key", "The name of the webhook key file.")
-	flag.StringVar(&metricsCertPath, "metrics-cert-path", "", "The directory that contains the metrics server certificate.")
+	flag.StringVar(&metricsCertPath, "metrics-cert-path", "",
+		"The directory that contains the metrics server certificate.")
 	flag.StringVar(&metricsCertName, "metrics-cert-name", "tls.crt", "The name of the metrics server certificate file.")
 	flag.StringVar(&metricsCertKey, "metrics-cert-key", "tls.key", "The name of the metrics server key file.")
-	flag.BoolVar(&enableHTTP2, "enable-http2", false, "If set, HTTP/2 will be enabled for the metrics and webhook servers.")
+	flag.BoolVar(&enableHTTP2, "enable-http2", false,
+		"If set, HTTP/2 will be enabled for the metrics and webhook servers.")
 	opts := zap.Options{Development: true}
 	opts.BindFlags(flag.CommandLine)
 	flag.Parse()
@@ -108,6 +112,26 @@ func main() {
 	simulatorURL := strings.TrimSpace(os.Getenv("SIMULATOR_URL"))
 	useWorkerPool := strings.ToLower(strings.TrimSpace(os.Getenv("USE_WORKER_POOL"))) == "true"
 
+	claimableBrokers := strings.TrimSpace(os.Getenv("KAFKA_BROKERS"))
+	claimableTopic := strings.TrimSpace(os.Getenv("CLAIMABLE_TOPIC"))
+
+	maxAdmissionsPerCycle := 1
+	if v := strings.TrimSpace(os.Getenv("MAX_ADMISSIONS_PER_CYCLE")); v != "" {
+		if n, err := strconv.Atoi(v); err == nil && n >= 1 {
+			maxAdmissionsPerCycle = n
+		}
+	}
+
+	var claimableProducer controller.ClaimableProducer
+	if claimableBrokers != "" {
+		claimableProducer = controller.NewKafkaClaimableProducer(claimableBrokers, claimableTopic)
+		defer func() {
+			if claimableProducer != nil {
+				_ = claimableProducer.Close()
+			}
+		}()
+	}
+
 	fleetRegistrar := controller.NewMultiFleetRegistrar(localSim, simulatorURL, true)
 
 	if err = (&controller.GPUNodePoolReconciler{
@@ -128,9 +152,10 @@ func main() {
 	}
 
 	if err = (&controller.GPUWorkloadReconciler{
-		Client:            mgr.GetClient(),
-		Scheme:            mgr.GetScheme(),
-		RuntimeSimulator:  localSim,
+		Client:           mgr.GetClient(),
+		Scheme:           mgr.GetScheme(),
+		RuntimeSimulator: localSim,
+		//nolint:staticcheck // SA1019: migrate to GetEventRecorder when switching to new events API
 		Recorder:          mgr.GetEventRecorderFor("gpuworkload-controller"),
 		UseWorkerPool:     useWorkerPool,
 		SimulatorURL:      simulatorURL,
@@ -141,13 +166,15 @@ func main() {
 	}
 
 	schedulerLoop := &controller.SchedulerLoop{
-		Client:                mgr.GetClient(),
-		Scheme:                mgr.GetScheme(),
-		Cache:                 mgr.GetCache(),
-		Simulator:             localSim,
+		Client:    mgr.GetClient(),
+		Scheme:    mgr.GetScheme(),
+		Cache:     mgr.GetCache(),
+		Simulator: localSim,
+		//nolint:staticcheck // SA1019: migrate to GetEventRecorder when switching to new events API
 		Recorder:              mgr.GetEventRecorderFor("scheduler-loop"),
-		MaxAdmissionsPerCycle: 1,
+		MaxAdmissionsPerCycle: maxAdmissionsPerCycle,
 		MinCycleInterval:      0,
+		ClaimableProducer:     claimableProducer,
 	}
 	if err = mgr.Add(schedulerLoop); err != nil {
 		setupLog.Error(err, "Failed to add SchedulerLoop runnable")

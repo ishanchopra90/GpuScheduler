@@ -69,7 +69,7 @@ func (m *MultiFleetRegistrar) RegisterFleet(poolKey string, spec sim.GPUNodePool
 		}
 		return nil
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 
 	if resp.StatusCode == http.StatusOK {
 		return nil
@@ -112,7 +112,7 @@ func (m *MultiFleetRegistrar) DeleteFleet(poolKey string) {
 		log.Printf("DeleteFleet: remote deregister (%s): %v", m.RemoteBase, err)
 		return
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 	if resp.StatusCode != http.StatusOK {
 		log.Printf("DeleteFleet: remote returned %s", resp.Status)
 	}

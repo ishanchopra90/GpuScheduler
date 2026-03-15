@@ -83,7 +83,7 @@ KAFKA_NS ?= kafka
 STRIMZI_HELM_REPO ?= oci://quay.io/strimzi-helm/strimzi-kafka-operator
 
 .PHONY: kafka-up
-kafka-up: ## Deploy Strimzi operator and a single-node Kafka cluster in Kind (topic gpu.workloads.submit created).
+kafka-up: ## Deploy Strimzi operator and Kafka cluster (Kafka Exporter with groupRegex/topicRegex for consumer lag).
 	@command -v helm >/dev/null 2>&1 || { echo "Helm is not installed. Install from https://helm.sh/docs/intro/install/"; exit 1; }
 	@$(KUBECTL) create namespace $(KAFKA_NS) --dry-run=client -o yaml | $(KUBECTL) apply -f -
 	@helm upgrade --install strimzi-cluster-operator $(STRIMZI_HELM_REPO) \
@@ -187,6 +187,8 @@ setup-test-e2e: ## Set up a Kind cluster for e2e tests if it does not exist
 			echo "Creating Kind cluster '$(KIND_CLUSTER)'..."; \
 			$(KIND) create cluster --name $(KIND_CLUSTER) ;; \
 	esac
+	# Install kube-prometheus-stack (ServiceMonitor CRDs) into the e2e cluster
+	KIND_CLUSTER_LOCAL=$(KIND_CLUSTER) $(MAKE) monitoring-up
 
 # E2E test timeout: docker-build (and load image, cert-manager, deploy, specs) can exceed default 10m on first run.
 E2E_TIMEOUT ?= 25m
@@ -298,7 +300,7 @@ docker-build-worker-deployment: manifests generate fmt vet ## Build docker image
 SIMULATOR_URL ?= http://simulator.system.svc.cluster.local:8080
 .PHONY: worker-up
 worker-up: kind-up keda-up operator-up simulator-up docker-build-worker-deployment ## Deploy worker-deployment to Kind (enables operator worker-pool mode, build image, load, apply).
-	$(KUBECTL) set env deployment/$(WORKER_DEPLOYMENT_NAME) -n $(WORKER_DEPLOYMENT_NS) USE_WORKER_POOL=true SIMULATOR_URL="$(SIMULATOR_URL)" --containers=manager 2>/dev/null || true
+	$(KUBECTL) set env deployment/$(WORKER_DEPLOYMENT_NAME) -n $(WORKER_DEPLOYMENT_NS) USE_WORKER_POOL=true SIMULATOR_URL="$(SIMULATOR_URL)" KAFKA_BROKERS="kafka-kafka-bootstrap.kafka.svc.cluster.local:9092" CLAIMABLE_TOPIC="gpu.workloads.claimable" --containers=manager 2>/dev/null || true
 	$(KUBECTL) rollout restart deployment/$(WORKER_DEPLOYMENT_NAME) -n $(WORKER_DEPLOYMENT_NS)
 	$(KIND) load docker-image $(WORKER_DEPLOYMENT_IMG) --name $(KIND_CLUSTER_LOCAL)
 	$(KUBECTL) apply -k deploy/worker-deployment
@@ -320,9 +322,11 @@ apply-pool: ## Apply GPUNodePool manifest from APPLY_POOL (default: sample pool)
 apply-sample-pool: apply-pool ## Apply the sample GPUNodePool (convenience for APPLY_POOL default).
 
 # Full end-to-end pipeline: Kind, Kafka, monitoring (Prometheus CRDs first so ServiceMonitor exists),
-# then KEDA, simulator, operator, submitter, workers, and optional GPUNodePool (APPLY_POOL).
+# then submitter, workers, and optional GPUNodePool (APPLY_POOL). Kafka Exporter (groupRegex/topicRegex
+# in deploy/kafka/cluster.yaml) and Prometheus scrape for it (deploy/monitoring/values.yaml) are
+# applied by kafka-up and monitoring-up; no manual helm/kubectl needed.
 .PHONY: stack-up
-stack-up: kind-up stack-load-images kafka-up monitoring-up submitter-up worker-up apply-pool ## Bring up pipeline + Prometheus/Grafana + pool (APPLY_POOL). Monitoring before operator so ServiceMonitor CRD exists.
+stack-up: kind-up stack-load-images kafka-up monitoring-up submitter-up worker-up apply-pool ## Bring up pipeline + Prometheus/Grafana + pool (APPLY_POOL). Includes Kafka Exporter scrape and consumer-group lag.
 
 MONITORING_NS ?= monitoring
 PROMETHEUS_HELM_REPO ?= https://prometheus-community.github.io/helm-charts
@@ -330,7 +334,7 @@ KUBE_PROMETHEUS_STACK_RELEASE ?= kube-prometheus-stack
 MONITORING_VALUES ?= deploy/monitoring/values.yaml
 
 .PHONY: monitoring-up
-monitoring-up: kind-up ## Install Prometheus and Grafana (kube-prometheus-stack) with scrape configs for pipeline metrics.
+monitoring-up: kind-up ## Install Prometheus and Grafana (kube-prometheus-stack) with scrape configs for pipeline metrics and Kafka Exporter (kafka_consumergroup_lag).
 	@command -v helm >/dev/null 2>&1 || { echo "Helm is not installed. Install from https://helm.sh/docs/intro/install/"; exit 1; }
 	@helm repo add prometheus-community $(PROMETHEUS_HELM_REPO) 2>/dev/null || true
 	@helm repo update
@@ -496,11 +500,20 @@ $(ENVTEST): $(LOCALBIN)
 
 .PHONY: golangci-lint
 golangci-lint: $(GOLANGCI_LINT) ## Download golangci-lint locally if necessary.
+# Install with GOTOOLCHAIN so the binary is built with the same Go as the project (1.25.x);
+# otherwise golangci-lint refuses to run when built with an older Go than go.mod's target.
 $(GOLANGCI_LINT): $(LOCALBIN)
-	$(call go-install-tool,$(GOLANGCI_LINT),github.com/golangci/golangci-lint/v2/cmd/golangci-lint,$(GOLANGCI_LINT_VERSION))
+	@[ -f "$(GOLANGCI_LINT)-$(GOLANGCI_LINT_VERSION)" ] && [ "$$(readlink -- "$(GOLANGCI_LINT)" 2>/dev/null)" = "$(GOLANGCI_LINT)-$(GOLANGCI_LINT_VERSION)" ] || { \
+	set -e; \
+	echo "Downloading github.com/golangci/golangci-lint/v2/cmd/golangci-lint@$(GOLANGCI_LINT_VERSION)"; \
+	rm -f "$(GOLANGCI_LINT)"; \
+	GOBIN="$(abspath $(LOCALBIN))" GOTOOLCHAIN=go1.25.3 go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@$(GOLANGCI_LINT_VERSION); \
+	mv "$(LOCALBIN)/golangci-lint" "$(GOLANGCI_LINT)-$(GOLANGCI_LINT_VERSION)"; \
+	}; \
+	ln -sf "$$(realpath "$(GOLANGCI_LINT)-$(GOLANGCI_LINT_VERSION)")" "$(GOLANGCI_LINT)"
 	@test -f .custom-gcl.yml && { \
 		echo "Building custom golangci-lint with plugins..." && \
-		$(GOLANGCI_LINT) custom --destination $(LOCALBIN) --name golangci-lint-custom && \
+		GOTOOLCHAIN=go1.25.3 $(GOLANGCI_LINT) custom --destination $(LOCALBIN) --name golangci-lint-custom && \
 		mv -f $(LOCALBIN)/golangci-lint-custom $(GOLANGCI_LINT); \
 	} || true
 

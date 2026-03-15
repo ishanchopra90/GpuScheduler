@@ -58,4 +58,22 @@ func TestValidate(t *testing.T) {
 			t.Error("Validate(kind inference, no config) expected error")
 		}
 	})
+	t.Run("kind training but missing training config", func(t *testing.T) {
+		r := validReq()
+		r.Kind = "training"
+		r.Training = nil
+		r.Inference = nil
+		if err := Validate(r); err == nil {
+			t.Error("Validate(kind training, no config) expected error")
+		}
+	})
+	t.Run("kind eval but missing eval config", func(t *testing.T) {
+		r := validReq()
+		r.Kind = "eval"
+		r.Eval = nil
+		r.Inference = nil
+		if err := Validate(r); err == nil {
+			t.Error("Validate(kind eval, no config) expected error")
+		}
+	})
 }

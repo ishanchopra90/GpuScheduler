@@ -2,10 +2,12 @@ package controller
 
 import (
 	"context"
+	"time"
 
 	"github.com/golang/mock/gomock"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
+	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -203,7 +205,7 @@ var _ = Describe("GPUWorkload Controller", func() {
 				Scheme:           scheme.Scheme,
 				RuntimeSimulator: mockSim,
 			}
-			for i := 0; i < 3; i++ {
+			for range 3 {
 				_, _ = r.Reconcile(ctx, reconcile.Request{NamespacedName: failedKey})
 			}
 			Expect(k8sClient.Get(ctx, failedKey, wl)).To(Succeed())
@@ -217,6 +219,56 @@ var _ = Describe("GPUWorkload Controller", func() {
 			Expect(err).NotTo(HaveOccurred())
 			Expect(k8sClient.Get(ctx, failedKey, wl)).To(Succeed())
 			Expect(wl.Status.Phase).To(Equal(schedulerv1alpha1.GPUWorkloadPhaseFailed))
+		})
+	})
+
+	Context("finalizer and delete", func() {
+		It("adds finalizer on first reconcile and removes it on delete after releasing allocation", func() {
+			ctx := context.Background()
+			key := types.NamespacedName{Name: "finalizer-workload", Namespace: "default"}
+			workloadID := key.Namespace + "/" + key.Name
+			wl := &schedulerv1alpha1.GPUWorkload{
+				ObjectMeta: metav1.ObjectMeta{Name: key.Name, Namespace: key.Namespace},
+				Spec: schedulerv1alpha1.GPUWorkloadSpec{
+					Tenant:       "team-a",
+					Priority:     5,
+					GPUCount:     1,
+					GPUMemoryMiB: 16000,
+					Profile:      "h100_sxm",
+					Tokens:       100,
+					Kind:         schedulerv1alpha1.WorkloadKindTraining,
+					Training: &schedulerv1alpha1.TrainingRuntimeSpec{
+						GlobalBatchSize: 1,
+						MicroBatchSize:  1,
+						GradAccumSteps:  1,
+						SequenceLength:  1,
+					},
+				},
+			}
+			Expect(k8sClient.Create(ctx, wl)).To(Succeed())
+
+			ctrl := gomock.NewController(GinkgoT())
+			mockSim := mocks.NewMockWorkloadRuntimeSimulator(ctrl)
+			mockSim.EXPECT().Release(workloadID).Return(nil).Times(1)
+			r := &GPUWorkloadReconciler{
+				Client:           k8sClient,
+				Scheme:           scheme.Scheme,
+				RuntimeSimulator: mockSim,
+			}
+
+			_, err := r.Reconcile(ctx, reconcile.Request{NamespacedName: key})
+			Expect(err).NotTo(HaveOccurred())
+			Expect(k8sClient.Get(ctx, key, wl)).To(Succeed())
+			Expect(wl.Finalizers).To(ContainElement("scheduler.ishanchopra.dev/gpuworkload-finalizer"))
+
+			Expect(k8sClient.Delete(ctx, wl)).To(Succeed())
+			_, err = r.Reconcile(ctx, reconcile.Request{NamespacedName: key})
+			Expect(err).NotTo(HaveOccurred())
+
+			Eventually(func(g Gomega) {
+				err := k8sClient.Get(ctx, key, &schedulerv1alpha1.GPUWorkload{})
+				g.Expect(apierrors.IsNotFound(err)).To(BeTrue())
+			}, 10*time.Second, 200*time.Millisecond).Should(Succeed())
 		})
 	})
 })

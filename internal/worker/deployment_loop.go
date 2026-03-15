@@ -4,10 +4,14 @@ import (
 	"context"
 	"encoding/json"
 	"log"
+	"maps"
 	"time"
 
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
+	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
+	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/types"
+	"k8s.io/client-go/tools/cache"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
 	"github.com/ishanchopra/gpu-scheduler/internal/sim"
@@ -43,6 +47,7 @@ type DeploymentLoopConfig struct {
 // update), runs Allocate/Start and polls until completion, then updates workload Phase to
 // Succeeded or Failed. Loops until ctx is done.
 // Concurrency model: one workload at a time per pod (MaxConcurrentWorkloads=1).
+// Use RunDeploymentLoopWatch for a watch-based flow that avoids periodic lists when idle.
 func RunDeploymentLoop(ctx context.Context, cfg DeploymentLoopConfig) {
 	if cfg.PollInterval <= 0 {
 		cfg.PollInterval = 5 * time.Second
@@ -59,6 +64,7 @@ func RunDeploymentLoop(ctx context.Context, cfg DeploymentLoopConfig) {
 		}
 		workload, err := findAndClaimScheduledWorkload(ctx, cfg)
 		if err != nil {
+			RecordError(cfg.WorkerID, "claim_failed")
 			log.Printf("Find/claim workload: %v", err)
 			sleepOrDone(ctx, cfg.PollInterval)
 			continue
@@ -69,6 +75,80 @@ func RunDeploymentLoop(ctx context.Context, cfg DeploymentLoopConfig) {
 		}
 		runOneWorkload(ctx, cfg, workload)
 	}
+}
+
+// RunDeploymentLoopWatch runs a watch-based claim loop: it blocks on the informer's trigger
+// channel and on "workload done", then lists from the informer cache (no API list) to find
+// a claimable workload, claims it via the API, and runs it. When idle, no periodic lists.
+// The informer must already be running; callers typically start it in a goroutine and wait
+// for HasSynced before calling this.
+func RunDeploymentLoopWatch(ctx context.Context, cfg DeploymentLoopConfig, inf *GPUWorkloadInformer) {
+	if cfg.MaxConcurrentWorkloads <= 0 {
+		cfg.MaxConcurrentWorkloads = DefaultMaxConcurrentWorkloads
+	}
+	log.Printf("Worker %s started, watch-based discovery for namespace %s", cfg.WorkerID, cfg.Namespace)
+	store := inf.Informer.GetStore()
+	// Seed one trigger so we check the cache immediately (e.g. workloads already Scheduled at startup).
+	select {
+	case inf.TriggerCh <- struct{}{}:
+	default:
+	}
+	for {
+		select {
+		case <-ctx.Done():
+			return
+		case <-inf.TriggerCh:
+			// Wake: event suggested there may be claimable work, or we just finished a workload.
+		}
+		workload := findClaimableFromStore(store, cfg.Namespace)
+		if workload == nil {
+			continue
+		}
+		if err := claimWorkload(ctx, cfg, workload); err != nil {
+			if apierrors.IsConflict(err) {
+				select {
+				case inf.TriggerCh <- struct{}{}:
+				default:
+				}
+				continue
+			}
+			RecordError(cfg.WorkerID, "claim_failed")
+			log.Printf("Claim workload: %v", err)
+			continue
+		}
+		runOneWorkload(ctx, cfg, workload)
+		// After finishing, wake to check cache for more work.
+		select {
+		case inf.TriggerCh <- struct{}{}:
+		default:
+		}
+	}
+}
+
+// findClaimableFromStore lists GPUWorkloads from the informer cache and returns the first
+// that is Phase=Scheduled and unclaimed, as a typed copy. Returns nil if none.
+func findClaimableFromStore(store cache.Store, namespace string) *schedulerv1alpha1.GPUWorkload {
+	for _, obj := range store.List() {
+		u, ok := obj.(*unstructured.Unstructured)
+		if !ok {
+			continue
+		}
+		if u.GetNamespace() != namespace {
+			continue
+		}
+		w := &schedulerv1alpha1.GPUWorkload{}
+		if err := runtime.DefaultUnstructuredConverter.FromUnstructured(u.Object, w); err != nil {
+			continue
+		}
+		if w.Status.Phase != schedulerv1alpha1.GPUWorkloadPhaseScheduled {
+			continue
+		}
+		if _, claimed := w.Annotations[AnnotationClaimedBy]; claimed {
+			continue
+		}
+		return w
+	}
+	return nil
 }
 
 func findAndClaimScheduledWorkload(ctx context.Context, cfg DeploymentLoopConfig) (*schedulerv1alpha1.GPUWorkload, error) {
@@ -106,9 +186,7 @@ func claimWorkload(ctx context.Context, cfg DeploymentLoopConfig, workload *sche
 		return nil
 	}
 	annotations := make(map[string]string)
-	for k, v := range workload.Annotations {
-		annotations[k] = v
-	}
+	maps.Copy(annotations, workload.Annotations)
 	annotations[AnnotationClaimedBy] = cfg.WorkerID
 	patch := workloadClaimPatch{
 		Metadata: &struct {
@@ -128,7 +206,11 @@ func claimWorkload(ctx context.Context, cfg DeploymentLoopConfig, workload *sche
 		return err
 	}
 	workload.Status.Phase = schedulerv1alpha1.GPUWorkloadPhaseRunning
-	return cfg.Client.Status().Update(ctx, workload)
+	if err := cfg.Client.Status().Update(ctx, workload); err != nil {
+		return err
+	}
+	RecordWorkloadClaimed(cfg.WorkerID)
+	return nil
 }
 
 func runOneWorkload(ctx context.Context, cfg DeploymentLoopConfig, workload *schedulerv1alpha1.GPUWorkload) {
@@ -139,6 +221,7 @@ func runOneWorkload(ctx context.Context, cfg DeploymentLoopConfig, workload *sch
 
 	profile := workload.Spec.Profile
 	if err := cfg.SimClient.Allocate(workloadID, gpuCount, memMiB, profile); err != nil {
+		RecordError(cfg.WorkerID, "allocate_failed")
 		log.Printf("Allocate %s: %v", workloadID, err)
 		setWorkloadPhase(ctx, cfg.Client, workload, schedulerv1alpha1.GPUWorkloadPhaseFailed)
 		sleepOrDone(ctx, AllocateStartFailureBackoff)
@@ -146,12 +229,15 @@ func runOneWorkload(ctx context.Context, cfg DeploymentLoopConfig, workload *sch
 	}
 	runID, err := cfg.SimClient.Start(input)
 	if err != nil {
+		RecordError(cfg.WorkerID, "start_failed")
 		log.Printf("Start %s: %v", workloadID, err)
 		setWorkloadPhase(ctx, cfg.Client, workload, schedulerv1alpha1.GPUWorkloadPhaseFailed)
 		releaseRemoteAllocation(cfg.SimClient, workloadID)
 		sleepOrDone(ctx, AllocateStartFailureBackoff)
 		return
 	}
+	startTime := time.Now()
+	RecordRunStarted(cfg.WorkerID)
 
 	for {
 		select {
@@ -170,6 +256,7 @@ func runOneWorkload(ctx context.Context, cfg DeploymentLoopConfig, workload *sch
 			time.Sleep(2 * time.Second)
 			continue
 		case sim.RunStatusSucceeded:
+			RecordRunCompleted(cfg.WorkerID, "succeeded", time.Since(startTime).Seconds())
 			if cfg.LogCompletionTimestamps {
 				log.Printf("Workload %s completed at %s status=Succeeded", workloadID, time.Now().UTC().Format(time.RFC3339))
 			}
@@ -177,6 +264,7 @@ func runOneWorkload(ctx context.Context, cfg DeploymentLoopConfig, workload *sch
 			releaseRemoteAllocation(cfg.SimClient, workloadID)
 			return
 		case sim.RunStatusFailed:
+			RecordRunCompleted(cfg.WorkerID, "failed", time.Since(startTime).Seconds())
 			if cfg.LogCompletionTimestamps {
 				log.Printf("Workload %s completed at %s status=Failed", workloadID, time.Now().UTC().Format(time.RFC3339))
 			}
@@ -184,6 +272,7 @@ func runOneWorkload(ctx context.Context, cfg DeploymentLoopConfig, workload *sch
 			releaseRemoteAllocation(cfg.SimClient, workloadID)
 			return
 		case sim.RunStatusPreempted:
+			RecordRunCompleted(cfg.WorkerID, "preempted", time.Since(startTime).Seconds())
 			if cfg.LogCompletionTimestamps {
 				log.Printf("Workload %s completed at %s status=Preempted", workloadID, time.Now().UTC().Format(time.RFC3339))
 			}

@@ -63,7 +63,7 @@ func (h *HTTPHandler) handleRegisterFleet(w http.ResponseWriter, r *http.Request
 		return
 	}
 	if req.PoolKey == "" {
-		req.PoolKey = "_default"
+		req.PoolKey = DefaultPoolKey
 	}
 	if err := h.sim.RegisterFleet(req.PoolKey, req.Spec); err != nil {
 		writeError(w, http.StatusBadRequest, err)
@@ -257,7 +257,7 @@ func writeJSON(w http.ResponseWriter, code int, v any) {
 }
 
 func decodeJSON(r *http.Request, dst any) error {
-	defer r.Body.Close()
+	defer func() { _ = r.Body.Close() }()
 	dec := json.NewDecoder(r.Body)
 	dec.DisallowUnknownFields()
 	if err := dec.Decode(dst); err != nil {

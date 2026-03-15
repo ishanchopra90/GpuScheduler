@@ -9,7 +9,7 @@ metadata:
     strimzi.io/cluster: kafka
 spec:
   topicName: gpu.workloads.submit
-  partitions: 12
+  partitions: 6
   replicas: 1
   config:
     retention.ms: 86400000

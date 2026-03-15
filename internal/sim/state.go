@@ -38,7 +38,11 @@ func NewSimulator() *Simulator {
 
 // allNodes returns a flattened slice of all nodes across all pools (read lock must be held).
 func (s *Simulator) allNodes() []*Node {
-	var out []*Node
+	cap := 0
+	for _, nodes := range s.pools {
+		cap += len(nodes)
+	}
+	out := make([]*Node, 0, cap)
 	for _, nodes := range s.pools {
 		out = append(out, nodes...)
 	}
@@ -93,11 +97,11 @@ func (s *Simulator) FleetUsageForPool(poolKey string) (FleetUsage, bool) {
 		total += len(n.Devices)
 	}
 	// Count allocations that use device IDs from this pool.
-	// _default uses legacy IDs (one slash: "node-N/gpu-M"); other pools use "poolKey/node-N/gpu-M".
+	// DefaultPoolKey uses legacy IDs (one slash: "node-N/gpu-M"); other pools use "poolKey/node-N/gpu-M".
 	allocated := 0
 	for _, a := range s.allocations {
 		for _, id := range a.DeviceIDs {
-			if poolKey == "_default" {
+			if poolKey == DefaultPoolKey {
 				if strings.Count(id, "/") == 1 {
 					allocated++
 				}
@@ -153,9 +157,9 @@ func buildNodesWithPoolKey(spec GPUNodePoolSpec, poolKey string) ([]*Node, error
 	if spec.MemoryMiBPerDevice <= 0 {
 		return nil, fmt.Errorf("MemoryMiBPerDevice must be positive, got %d", spec.MemoryMiBPerDevice)
 	}
-	// Use no prefix for "" or "_default" so single-pool / tests keep legacy "node-0/gpu-0" IDs.
+	// Use no prefix for "" or DefaultPoolKey so single-pool / tests keep legacy "node-0/gpu-0" IDs.
 	prefix := ""
-	if poolKey != "" && poolKey != "_default" {
+	if poolKey != "" && poolKey != DefaultPoolKey {
 		prefix = poolKey + "/"
 	}
 	nodes := make([]*Node, spec.NodeCount)

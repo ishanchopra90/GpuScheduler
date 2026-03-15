@@ -6,3 +6,4 @@ resources:
   - cluster.yaml
   - topic.yaml
   - topic-dlq.yaml
+  - topic-claimable.yaml

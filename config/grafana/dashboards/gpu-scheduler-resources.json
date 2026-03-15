@@ -115,6 +115,46 @@
       "targets": [{ "expr": "rate(container_cpu_usage_seconds_total{namespace=~\"$namespace\", container=\"worker\"}[5m])", "legendFormat": "{{ pod }}", "refId": "A" }],
       "title": "CPU usage (cores)",
       "type": "timeseries"
+    },
+    {
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 28 },
+      "id": 204,
+      "title": "Kafka broker",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "Compare to cap: 1Gi (kafka-dual-role-0 pod in namespace kafka)",
+      "fieldConfig": { "defaults": { "unit": "bytes", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 29 },
+      "id": 29,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [
+        {
+          "expr": "container_memory_working_set_bytes{namespace=\"kafka\", pod=\"kafka-dual-role-0\", container=\"kafka\"}",
+          "legendFormat": "{{ pod }}",
+          "refId": "A"
+        }
+      ],
+      "title": "Broker memory (working set)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "description": "rate(container_cpu_usage_seconds_total); compare to pod limit 1 core",
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 29 },
+      "id": 30,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "targets": [
+        {
+          "expr": "rate(container_cpu_usage_seconds_total{namespace=\"kafka\", pod=\"kafka-dual-role-0\", container=\"kafka\"}[5m])",
+          "legendFormat": "{{ pod }}",
+          "refId": "A"
+        }
+      ],
+      "title": "Broker CPU usage (cores)",
+      "type": "timeseries"
     }
   ],
   "refresh": "30s",
@@ -143,7 +183,7 @@
         "includeAll": true,
         "name": "namespace",
         "options": [],
-        "query": "label_values(container_memory_working_set_bytes{container=~\"manager|submitter|simulator|worker\"}, namespace)",
+        "query": "label_values(container_memory_working_set_bytes{container=~\"manager|submitter|simulator|worker|kafka\"}, namespace)",
         "refresh": 2,
         "regex": "",
         "skipUrlSync": false,

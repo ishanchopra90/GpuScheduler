@@ -1,7 +1,6 @@
-# Submitter: Deployment + RBAC + KEDA ScaledObject (scale on Kafka consumer group lag).
-# KEDA uses the kafka trigger and talks to the Strimzi Kafka broker for lag; alternatively
-# deploy Strimzi Kafka Exporter and use KEDA's prometheus trigger on kafka_consumer_group_lag.
-# Prerequisites: Kafka topic gpu.workloads.submit (e.g. 12 partitions), KEDA installed.
+# Submitter: Deployment + RBAC. For the ingestion bottleneck demo we run at a fixed replica
+# count (no KEDA autoscaling) so that ingestion capacity is controlled explicitly.
+# Prerequisites: Kafka topic gpu.workloads.submit (e.g. 14 partitions).
 # Override brokers/image via kustomize (e.g. replace or patches).
 # Namespace "system" is created so submitter can be applied before simulator/operator.
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -11,4 +10,3 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - rbac.yaml
-  - keda-scaledobject.yaml

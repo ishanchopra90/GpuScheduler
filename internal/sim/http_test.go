@@ -51,7 +51,7 @@ func TestHTTPHandler_SimulatorLifecycle(t *testing.T) {
 	h := NewHTTPHandler(s)
 
 	mustPOSTJSON(t, h, "/v1/fleet/register", map[string]any{
-		"poolKey": "_default",
+		"poolKey": DefaultPoolKey,
 		"spec": GPUNodePoolSpec{
 			NodeCount:          2,
 			DevicesPerNode:     2,
@@ -129,7 +129,7 @@ func TestHTTPHandler_Preempt(t *testing.T) {
 	h := NewHTTPHandler(s)
 
 	mustPOSTJSON(t, h, "/v1/fleet/register", map[string]any{
-		"poolKey": "_default",
+		"poolKey": DefaultPoolKey,
 		"spec": GPUNodePoolSpec{
 			NodeCount:          1,
 			DevicesPerNode:     1,
